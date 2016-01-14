@@ -71,8 +71,8 @@ angular.module( 'App.GamePlaylist.AddToPopover' ).directive( 'gjGamePlaylistAddT
 				playlist.$addGame( this.game.id ).then( function( playlistGame )
 				{
 					Growls.success(
-						gettextCatalog.getString( 'main.library.playlists.add_game_success_growl', { game: _this.game.title, playlist: playlist.name } ),
-						gettextCatalog.getString( 'main.library.playlists.add_game_success_growl_title', { game: _this.game.title, playlist: playlist.name } )
+						gettextCatalog.getString( 'library.playlists.add_game_success_growl', { game: _this.game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.add_game_success_growl_title', { game: _this.game.title, playlist: playlist.name } )
 					);
 					_this.playlistsWithGame.push( playlist.id );
 					Popover.hideAll();
@@ -80,8 +80,8 @@ angular.module( 'App.GamePlaylist.AddToPopover' ).directive( 'gjGamePlaylistAddT
 				.catch( function()
 				{
 					Growls.error(
-						gettextCatalog.getString( 'main.library.playlists.add_game_error_growl', { game: _this.game.title, playlist: playlist.name } ),
-						gettextCatalog.getString( 'main.library.playlists.add_game_error_growl_title', { game: _this.game.title, playlist: playlist.name } )
+						gettextCatalog.getString( 'library.playlists.add_game_error_growl', { game: _this.game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.add_game_error_growl_title', { game: _this.game.title, playlist: playlist.name } )
 					);
 				} );
 			};
@@ -91,8 +91,8 @@ angular.module( 'App.GamePlaylist.AddToPopover' ).directive( 'gjGamePlaylistAddT
 				playlist.$removeGame( this.game.id ).then( function( playlistGame )
 				{
 					Growls.success(
-						gettextCatalog.getString( 'main.library.playlists.remove_game_success_growl', { game: _this.game.title, playlist: playlist.name } ),
-						gettextCatalog.getString( 'main.library.playlists.remove_game_success_growl_title', { game: _this.game.title, playlist: playlist.name } )
+						gettextCatalog.getString( 'library.playlists.remove_game_success_growl', { game: _this.game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_game_success_growl_title', { game: _this.game.title, playlist: playlist.name } )
 					);
 					_.pull( this.playlistsWithGame, playlist.id );
 					Popover.hideAll();
@@ -100,8 +100,8 @@ angular.module( 'App.GamePlaylist.AddToPopover' ).directive( 'gjGamePlaylistAddT
 				.catch( function()
 				{
 					Growls.error(
-						gettextCatalog.getString( 'main.library.playlists.remove_game_error_growl', { game: _this.game.title, playlist: playlist.name } ),
-						gettextCatalog.getString( 'main.library.playlists.remove_game_error_growl_title', { game: _this.game.title, playlist: playlist.name } )
+						gettextCatalog.getString( 'library.playlists.remove_game_error_growl', { game: _this.game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_game_error_growl_title', { game: _this.game.title, playlist: playlist.name } )
 					);
 				} );
 			};

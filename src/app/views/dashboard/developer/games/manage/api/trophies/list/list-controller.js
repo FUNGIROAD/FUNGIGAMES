@@ -7,10 +7,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 	$scope.Game_Trophy = Game_Trophy;
 
 	this.trophyLabels = {};
-	this.trophyLabels[ Game_Trophy.DIFFICULTY_BRONZE ] = gettextCatalog.getString( 'main.trophies.bronze' );
-	this.trophyLabels[ Game_Trophy.DIFFICULTY_SILVER ] = gettextCatalog.getString( 'main.trophies.silver' );
-	this.trophyLabels[ Game_Trophy.DIFFICULTY_GOLD ] = gettextCatalog.getString( 'main.trophies.gold' );
-	this.trophyLabels[ Game_Trophy.DIFFICULTY_PLATINUM ] = gettextCatalog.getString( 'main.trophies.platinum' );
+	this.trophyLabels[ Game_Trophy.DIFFICULTY_BRONZE ] = gettextCatalog.getString( 'trophies.bronze' );
+	this.trophyLabels[ Game_Trophy.DIFFICULTY_SILVER ] = gettextCatalog.getString( 'trophies.silver' );
+	this.trophyLabels[ Game_Trophy.DIFFICULTY_GOLD ] = gettextCatalog.getString( 'trophies.gold' );
+	this.trophyLabels[ Game_Trophy.DIFFICULTY_PLATINUM ] = gettextCatalog.getString( 'trophies.platinum' );
 
 	this.trophies = Game_Trophy.populate( payload.trophies );
 

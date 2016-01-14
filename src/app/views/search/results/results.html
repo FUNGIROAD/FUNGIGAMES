@@ -2,7 +2,7 @@
 	<div class="container">
 		<p class="text-center text-muted">
 			<span class="jolticon jolticon-chevron-up"></span>
-			{{ ::'main.search.results_placeholder' | translate }}
+			{{ ::'search.results_placeholder' | translate }}
 			<span class="jolticon jolticon-chevron-up"></span>
 		</p>
 	</div>
@@ -16,10 +16,10 @@
 
 			<div class="clearfix">
 				<a class="link-muted pull-right" ui-sref="search.users( { q: searchCtrl.query } )">
-					{{ ::'main.search.results.view_all_link' | translate }}
+					{{ ::'search.results.view_all_link' | translate }}
 				</a>
 				<h4 class="section-header">
-					{{ ::'main.search.results.users_heading' | translate }}
+					{{ ::'search.results.users_heading' | translate }}
 					<small>({{ searchCtrl.payload.usersCount }})</small>
 				</h4>
 			</div>
@@ -41,10 +41,10 @@
 
 			<div class="clearfix">
 				<a class="link-muted pull-right" ui-sref="search.games( { q: searchCtrl.query } )">
-					{{ ::'main.search.results.view_all_link' | translate }}
+					{{ ::'search.results.view_all_link' | translate }}
 				</a>
 				<h4 class="section-header">
-					{{ ::'main.search.results.games_heading' | translate }}
+					{{ ::'search.results.games_heading' | translate }}
 					<small>({{ searchCtrl.payload.gamesCount }})</small>
 				</h4>
 			</div>

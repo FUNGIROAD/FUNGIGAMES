@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-sm-10 col-md-8 col-lg-7">
 
-				<h2 class="section-header">{{ ::'main.game.trophies.heading' | translate }}</h2>
+				<h2 class="section-header">{{ ::'game.trophies.heading' | translate }}</h2>
 
 				<gj-trophy-completion
 					ng-if="App.user"
@@ -17,19 +17,19 @@
 					<ul>
 						<li>
 							<a ng-class="{ active: listCtrl.currentFilter == 'all' }" ng-click="listCtrl.currentFilter = 'all'">
-								{{ ::'main.game.trophies.all_tab' | translate }}
+								{{ ::'game.trophies.all_tab' | translate }}
 								<span class="badge hidden-xs">{{ ::listCtrl.trophies.length }}</span>
 							</a>
 						</li>
 						<li>
 							<a ng-class="{ active: listCtrl.currentFilter == 'achieved' }" ng-click="listCtrl.currentFilter = 'achieved'">
-								{{ ::'main.game.trophies.achieved_tab' | translate }}
+								{{ ::'game.trophies.achieved_tab' | translate }}
 								<span class="badge hidden-xs">{{ ::listCtrl.filteredTrophies.achieved.length }}</span>
 							</a>
 						</li>
 						<li>
 							<a ng-class="{ active: listCtrl.currentFilter == 'unachieved' }" ng-click="listCtrl.currentFilter = 'unachieved'">
-								{{ ::'main.game.trophies.unachieved_tab' | translate }}
+								{{ ::'game.trophies.unachieved_tab' | translate }}
 								<span class="badge hidden-xs">{{ ::listCtrl.filteredTrophies.unachieved.length }}</span>
 							</a>
 						</li>
@@ -37,7 +37,7 @@
 				</nav>
 
 				<div class="alert alert-warning" ng-if="::listCtrl.showInvisibleTrophyMessage">
-					{{ ::'main.trophies.invisible_trophies_message' | translate }}
+					{{ ::'trophies.invisible_trophies_message' | translate }}
 				</div>
 
 				<gj-trophy-list
@@ -52,5 +52,5 @@
 </section>
 
 <section class="section fill-pink" ng-if="::(!listCtrl.trophies.length)">
-	<div class="container text-center" translate>main.game.trophies.no_trophies_html</div>
+	<div class="container text-center" translate>game.trophies.no_trophies_html</div>
 </section>

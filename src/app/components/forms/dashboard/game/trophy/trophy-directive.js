@@ -25,10 +25,10 @@ angular.module( 'App.Forms.Dashboard' ).directive( 'gjFormDashboardGameTrophy', 
 		}
 
 		scope.difficultyOptions = [
-			{ label: gettextCatalog.getString( 'main.trophies.bronze' ), value: Game_Trophy.DIFFICULTY_BRONZE },
-			{ label: gettextCatalog.getString( 'main.trophies.silver' ), value: Game_Trophy.DIFFICULTY_SILVER },
-			{ label: gettextCatalog.getString( 'main.trophies.gold' ), value: Game_Trophy.DIFFICULTY_GOLD },
-			{ label: gettextCatalog.getString( 'main.trophies.platinum' ), value: Game_Trophy.DIFFICULTY_PLATINUM },
+			{ label: gettextCatalog.getString( 'trophies.bronze' ), value: Game_Trophy.DIFFICULTY_BRONZE },
+			{ label: gettextCatalog.getString( 'trophies.silver' ), value: Game_Trophy.DIFFICULTY_SILVER },
+			{ label: gettextCatalog.getString( 'trophies.gold' ), value: Game_Trophy.DIFFICULTY_GOLD },
+			{ label: gettextCatalog.getString( 'trophies.platinum' ), value: Game_Trophy.DIFFICULTY_PLATINUM },
 		];
 
 		// If we're adding, set some defaults.

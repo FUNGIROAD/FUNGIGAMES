@@ -18,14 +18,14 @@ angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
 	this.isFollowing = false;
 
 	this.developerSorting = {
-		'': gettextCatalog.getString( 'main.sorting.new' ),
-		'best': gettextCatalog.getString( 'main.sorting.best' ),
+		'': gettextCatalog.getString( 'sorting.new' ),
+		'best': gettextCatalog.getString( 'sorting.best' ),
 	};
 
 	this.tagSorting = {
-		'': gettextCatalog.getString( 'main.sorting.best' ),
-		'hot': gettextCatalog.getString( 'main.sorting.hot' ),
-		'new': gettextCatalog.getString( 'main.sorting.new' ),
+		'': gettextCatalog.getString( 'sorting.best' ),
+		'hot': gettextCatalog.getString( 'sorting.hot' ),
+		'new': gettextCatalog.getString( 'sorting.new' ),
 	};
 
 	this.processPayload = function( payload, $stateParams )

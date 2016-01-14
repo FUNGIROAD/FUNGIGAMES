@@ -1,7 +1,7 @@
 <div class="trophy-completion alert" ng-class="::(ctrl.achieved > 0 ? 'alert-info' : 'alert-warning')">
 
 	<div ng-if="::(ctrl.achieved > 0)">
-		<p translate translate-scope="{ achieved: ctrl.achieved, total: ctrl.total }">main.trophies.completion.lead_html</p>
+		<p translate translate-scope="{ achieved: ctrl.achieved, total: ctrl.total }">trophies.completion.lead_html</p>
 
 		<div class="progress progress-darker progress-thin">
 			<div class="progress-bar" ng-style="::{ width: ctrl.completionRate + '%' }"></div>
@@ -11,7 +11,7 @@
 			<div class="pull-left">
 				<div class="stat-big stat-big-smaller" style="margin-bottom: 0">
 					<div class="stat-big-digit">{{ ::ctrl.completionRate | number }}%</div>
-					<div class="stat-big-label">{{ ::'main.trophies.completion.completion_label' | translate }}</div>
+					<div class="stat-big-label">{{ ::'trophies.completion.completion_label' | translate }}</div>
 				</div>
 			</div>
 			<div class="pull-right">
@@ -20,12 +20,12 @@
 						<span class="jolticon jolticon-exp text-muted"></span>
 						{{ ::ctrl.experience | number }}
 					</div>
-					<div class="stat-big-label">{{ ::'main.trophies.completion.exp_gained_label' | translate }}</div>
+					<div class="stat-big-label">{{ ::'trophies.completion.exp_gained_label' | translate }}</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div ng-if="::(!ctrl.achieved)" translate>main.trophies.completion.none_achieved_html</div>
+	<div ng-if="::(!ctrl.achieved)" translate>trophies.completion.none_achieved_html</div>
 
 </div>

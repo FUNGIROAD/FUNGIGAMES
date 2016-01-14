@@ -35,23 +35,23 @@
 
 							<span class="user-dogtag" ng-class="'user-dogtag-' + profileCtrl.user.dogtag">{{ profileCtrl.user.dogtag | uppercase }}</span>
 
-							<span class="tag tag-active" ng-if="profileCtrl.userFriendship.state == User_Friendship.STATE_FRIENDS" gj-tooltip="$translate.instant( 'main.profile.friend_tooltip' )">
-								{{ ::'main.profile.friend_tag' | translate }}
+							<span class="tag tag-active" ng-if="profileCtrl.userFriendship.state == User_Friendship.STATE_FRIENDS" gj-tooltip="$translate.instant( 'profile.friend_tooltip' )">
+								{{ ::'profile.friend_tag' | translate }}
 							</span>
 
 							<span ng-if="::!profileCtrl.activeGameSession">
-								<span class="tag" ng-if="::!profileCtrl.isOnline" gj-tooltip="$translate.instant( 'main.profile.offline_tooltip' )">
+								<span class="tag" ng-if="::!profileCtrl.isOnline" gj-tooltip="$translate.instant( 'profile.offline_tooltip' )">
 									<span class="jolticon jolticon-chat-offline"></span>
-									{{ ::'main.profile.offline_tag' | translate }}
+									{{ ::'profile.offline_tag' | translate }}
 								</span>
-								<span class="tag tag-active" ng-if="::profileCtrl.isOnline" gj-tooltip="$translate.instant( 'main.profile.online_tooltip' )">
+								<span class="tag tag-active" ng-if="::profileCtrl.isOnline" gj-tooltip="$translate.instant( 'profile.online_tooltip' )">
 									<span class="jolticon jolticon-chat-online"></span>
-									{{ ::'main.profile.online_tag' | translate }}
+									{{ ::'profile.online_tag' | translate }}
 								</span>
 							</span>
-							<span class="tag tag-pink" ng-if="::profileCtrl.activeGameSession" gj-tooltip="$translate.instant( 'main.profile.in_game_tooltip' )">
+							<span class="tag tag-pink" ng-if="::profileCtrl.activeGameSession" gj-tooltip="$translate.instant( 'profile.in_game_tooltip' )">
 								<span class="jolticon jolticon-chat-in-game"></span>
-								{{ ::'main.profile.in_game_tag' | translate }}
+								{{ ::'profile.in_game_tag' | translate }}
 							</span>
 						</p>
 
@@ -80,23 +80,23 @@
 								target="_blank"
 								ng-href="{{ ::profileCtrl.user.web_site }}"
 								>
-								<span class="jolticon jolticon-world big" gj-tooltip="$translate.instant( 'main.profile.website_tooltip' )"></span>
+								<span class="jolticon jolticon-world big" gj-tooltip="$translate.instant( 'profile.website_tooltip' )"></span>
 							</a>
 						</p>
 					</div>
 
 					<h1>
 						{{ ::profileCtrl.user.display_name }}
-						<span ng-if="profileCtrl.user.is_verified" class="verified-account-tag jolticon jolticon-verified big" tooltip="{{ ::'main.profile.verified_tooltip' | translate }}"></span>
+						<span ng-if="profileCtrl.user.is_verified" class="verified-account-tag jolticon jolticon-verified big" tooltip="{{ ::'profile.verified_tooltip' | translate }}"></span>
 					</h1>
 
 					<p class="text-muted small">
-						{{ ::'main.profile.joined' | translate }}
+						{{ ::'profile.joined' | translate }}
 						<span am-time-ago="::profileCtrl.user.created_on"></span>
 						<span ng-if="::!profileCtrl.isOnline">
 							<span class="dot-separator hidden-xs"></span>
 							<br class="visible-xs">
-							{{ ::'main.profile.last_seen' | translate }}
+							{{ ::'profile.last_seen' | translate }}
 							<span am-time-ago="::profileCtrl.user.last_logged_on"></span>
 						</span>
 					</p>
@@ -112,7 +112,7 @@
 		<li class="visible-xs" ng-if="App.user && profileCtrl.user.id != App.user.id && !profileCtrl.userFriendship && !profileCtrl.user.is_verified">
 			<a class="i-button big block" ng-click="profileCtrl.sendFriendRequest()">
 				<span class="jolticon jolticon-friend-add-2"></span>
-				{{ ::'main.profile.friend_request_button' | translate }}
+				{{ ::'profile.friend_request_button' | translate }}
 			</a>
 		</li>
 
@@ -124,7 +124,7 @@
 				<li class="hidden-xs">
 					<a ng-click="profileCtrl.sendFriendRequest()">
 						<span class="jolticon jolticon-friend-add-2"></span>
-						{{ ::'main.profile.friend_request_button' | translate }}
+						{{ ::'profile.friend_request_button' | translate }}
 					</a>
 				</li>
 			</ul>
@@ -134,18 +134,18 @@
 			<ul>
 				<li>
 					<a ui-sref=".overview" ui-sref-active="active">
-						{{ ::'main.profile.overview_tab' | translate }}
+						{{ ::'profile.overview_tab' | translate }}
 					</a>
 				</li>
 				<li>
 					<a ui-sref=".library" ui-sref-active="active">
-						{{ ::'main.profile.library_tab' | translate }}
+						{{ ::'profile.library_tab' | translate }}
 					</a>
 				</li>
 				<li ng-if="App.user && (App.user.permission_level > 0 || profileCtrl.userFriendship.state == User_Friendship.STATE_FRIENDS)">
 					<a gj-popover-trigger="profile-more-options">
 						<span class="jolticon jolticon-ellipsis-h"></span>
-						{{ ::'main.options.more' | translate }}
+						{{ ::'options.more' | translate }}
 					</a>
 				</li>
 			</ul>
@@ -160,7 +160,7 @@
 			ng-if="profileCtrl.userFriendship.state == User_Friendship.STATE_FRIENDS"
 			>
 			<span class="jolticon jolticon-friend-remove-2"></span>
-			{{ ::'main.profile.remove_friend_button' | translate }}
+			{{ ::'profile.remove_friend_button' | translate }}
 		</a>
 		<a class="list-group-item has-icon"
 			ng-href="{{ ::Environment.baseUrl }}/moderate/users/view/{{ ::profileCtrl.user.id }}"
@@ -168,7 +168,7 @@
 			ng-if="App.user.permission_level > 0"
 			>
 			<span class="jolticon jolticon-cog"></span>
-			{{ ::'main.profile.moderate_user_button' | translate }}
+			{{ ::'profile.moderate_user_button' | translate }}
 		</a>
 	</div>
 </gj-popover>

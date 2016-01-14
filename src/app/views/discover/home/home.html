@@ -211,19 +211,19 @@
 
 			<h3 class="section-header sans-margin-bottom" ng-switch="homeCtrl.activeNewsTab">
 				<a class="link-unstyled"
-					ui-sref="main.discover.news.list"
+					ui-sref="discover.news.list"
 					ng-switch-when="hot"
 					gj-track-event="home:row-heading:news-hot"
 					>
-					{{ ::'main.discover.home.hot_news_heading' | translate }}
+					{{ ::'discover.home.hot_news_heading' | translate }}
 				</a>
 
 				<a class="link-unstyled"
-					ui-sref="main.discover.news.list-section( { section: 'followed' } )"
+					ui-sref="discover.news.list-section( { section: 'followed' } )"
 					ng-switch-when="followed"
 					gj-track-event="home:row-heading:news-followed"
 					>
-					{{ ::'main.discover.home.followed_news_heading' | translate }}
+					{{ ::'discover.home.followed_news_heading' | translate }}
 				</a>
 			</h3>
 

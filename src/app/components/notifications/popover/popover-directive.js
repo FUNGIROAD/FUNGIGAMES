@@ -81,7 +81,7 @@ angular.module( 'App.Notifications.Popover' ).directive( 'gjNotificationsPopover
 
 			this.dismissAll = function()
 			{
-				ModalConfirm.show( gettextCatalog.getString( 'main.notifications.clear_all_confirmation' ) )
+				ModalConfirm.show( gettextCatalog.getString( 'notifications.clear_all_confirmation' ) )
 					.then( function()
 					{
 						return Notification.$readAll();

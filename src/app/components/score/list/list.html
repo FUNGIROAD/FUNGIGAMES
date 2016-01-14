@@ -14,7 +14,7 @@
 				<a ng-if="::score.user" ng-href="{{ ::score.user.url }}">{{ ::score.user.display_name }}</a>
 				<span ng-if="::!score.user">
 					{{ ::score.guest }}
-					<em class="text-muted small">({{ ::'main.scores.guest' | translate }})</em>
+					<em class="text-muted small">({{ ::'scores.guest' | translate }})</em>
 				</span>
 			</div>
 			<div class="score-list-time" am-time-ago="::score.logged_on"></div>

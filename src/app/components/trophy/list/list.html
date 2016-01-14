@@ -21,7 +21,7 @@
 			</div>
 
 			<div class="trophy-list-item-meta">
-				<span tooltip="{{ ::'main.trophies.exp_gained_tooltip' | translate }}" class="text-muted">
+				<span tooltip="{{ ::'trophies.exp_gained_tooltip' | translate }}" class="text-muted">
 					<span class="jolticon jolticon-exp" style="vertical-align: middle"></span>
 					{{ ::trophy.experience | number }}
 					<span class="small">{{ ::'leveling.exp' | translate }}</span>
@@ -31,7 +31,7 @@
 					<span class="dot-separator hidden-xs"></span>
 					<br class="visible-xs">
 
-					<span class="tag tag-active">{{ ::'main.trophies.achieved_tag' | translate }}</span>
+					<span class="tag tag-active">{{ ::'trophies.achieved_tag' | translate }}</span>
 					<span class="dot-separator"></span>
 					<small class="text-muted" am-time-ago="::ctrl.achievedIndexed[ trophy.id ].logged_on"></small>
 				</span>

@@ -8,7 +8,7 @@
 			<span class="jolticon jolticon-pedestals-numbers big"></span>
 
 			<a class="link-unstyled" ui-sref="discover.games.view.scores.list( { slug: ctrl.game.slug, id: ctrl.game.id, tableId: ctrl.scoreTable.id, type: 'best' } )">
-				{{ ::'main.scores.overview.heading' | translate }}
+				{{ ::'scores.overview.heading' | translate }}
 			</a>
 			<small ng-show="::(ctrl.scoreTables.length > 1)">({{ ::ctrl.scoreTables.length | number }})</small>
 		</h2>
@@ -59,7 +59,7 @@
 		ng-if="App.user">
 
 		<div class="score-overview-user-best">
-			<h4 class="section-header">{{ ::'main.scores.overview.user_best_heading' | translate }}</h4>
+			<h4 class="section-header">{{ ::'scores.overview.user_best_heading' | translate }}</h4>
 
 			<div class="row">
 				<div class="col-sm-3 hidden-xs">
@@ -71,8 +71,8 @@
 					ng-repeat="bestScore in [ ctrl.userBestScore ] track by bestScore.id">
 
 					<div class="alert alert-warning" ng-if="::!bestScore">
-						<h4 class="sans-margin">{{ ::'main.scores.overview.user_best_none_heading' | translate }}</h4>
-						<p translate>main.scores.overview.user_best_none_body_html</p>
+						<h4 class="sans-margin">{{ ::'scores.overview.user_best_none_heading' | translate }}</h4>
+						<p translate>scores.overview.user_best_none_body_html</p>
 					</div>
 
 					<div class="well fill-dark clearfix" ng-if="::bestScore">
@@ -90,7 +90,7 @@
 						<br>
 
 						<div>
-							<span gj-tooltip="$translate.instant( 'main.scores.overview.user_best_exp_tooltip', { experience: ctrl.userScoreExperience } )">
+							<span gj-tooltip="$translate.instant( 'scores.overview.user_best_exp_tooltip', { experience: ctrl.userScoreExperience } )">
 								<span class="jolticon jolticon-exp text-muted" style="vertical-align: middle"></span>
 								{{ ::ctrl.userScoreExperience | number }}
 								<span class="initialism">{{ ::'leveling.exp' | translate }}</span>
@@ -113,7 +113,7 @@
 
 		<div class="score-overview-top">
 			<h4 ng-class="{ 'section-header': !App.user || (Screen.isDesktop && ctrl.size == 'full') }">
-				{{ ::'main.scores.overview.top_scores_heading' | translate }}
+				{{ ::'scores.overview.top_scores_heading' | translate }}
 			</h4>
 
 			<div ng-if="ctrl.scores.length">
@@ -147,11 +147,11 @@
 
 				<a class="i-button big" ui-sref="discover.games.view.scores.list( { slug: ctrl.game.slug, id: ctrl.game.id, tableId: ctrl.scoreTable.id, type: 'best' } )">
 					<span class="jolticon jolticon-media-list"></span>
-					{{ ::'main.scores.overview.view_more_button' | translate }}
+					{{ ::'scores.overview.view_more_button' | translate }}
 				</a>
 			</div>
 
-			<div class="alert alert-warning full-bleed-xs" ng-if="!ctrl.scores.length" translate>main.scores.overview.no_scores_html</div>
+			<div class="alert alert-warning full-bleed-xs" ng-if="!ctrl.scores.length" translate>scores.overview.no_scores_html</div>
 
 		</div>
 

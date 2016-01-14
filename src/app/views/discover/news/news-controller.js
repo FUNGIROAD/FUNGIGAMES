@@ -7,7 +7,7 @@ angular.module( 'App.Views' ).controller( 'Discover.NewsCtrl', function( $scope,
 	this.articles = [];
 
 	this.sortingOptions = {
-		'': gettextCatalog.getString( 'main.sorting.hot' ),
-		'new': gettextCatalog.getString( 'main.sorting.new' ),
+		'': gettextCatalog.getString( 'sorting.hot' ),
+		'new': gettextCatalog.getString( 'sorting.new' ),
 	};
 } );

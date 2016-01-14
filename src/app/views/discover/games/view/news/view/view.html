@@ -12,9 +12,9 @@
 					href="#comments"
 					ng-switch="::viewCtrl.article.comments_count || 0"
 					>
-					<span ng-switch-when="0">{{ ::'main.news.list.post_comments_none' | translate }}</span>
-					<span ng-switch-when="1">{{ ::'main.news.list.post_comments_one' | translate }}</span>
-					<span ng-switch-default>{{ ::'main.news.list.post_comments_other' | translate:{ count: viewCtrl.article.comments_count } }}</span>
+					<span ng-switch-when="0">{{ ::'news.list.post_comments_none' | translate }}</span>
+					<span ng-switch-when="1">{{ ::'news.list.post_comments_one' | translate }}</span>
+					<span ng-switch-default>{{ ::'news.list.post_comments_other' | translate:{ count: viewCtrl.article.comments_count } }}</span>
 				</a>
 			</span>
 		</div>

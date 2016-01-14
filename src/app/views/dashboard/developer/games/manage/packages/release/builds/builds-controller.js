@@ -1,11 +1,11 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Packages.Release.BuildsCtrl', function(
-	$scope, $state, $timeout, $translate, Translate, App, Game_Release, Game_Build, Game_Build_File, Game_Build_LaunchOption, Game_Build_Param, ModalConfirm, Growls, AutoScroll, payload )
+	$scope, $state, $timeout, App, Game_Release, Game_Build, Game_Build_File, Game_Build_LaunchOption, Game_Build_Param, ModalConfirm, Growls, AutoScroll, gettextCatalog, payload )
 {
 	var _this = this;
 	var manageCtrl = $scope.manageCtrl;
 	var releaseCtrl = $scope.releaseCtrl;
 
-	Translate.pageTitle( 'dash.games.releases.builds.page_title', {
+	App.title = gettextCatalog.getString( 'dash.games.releases.builds.page_title', {
 		game: manageCtrl.game.title,
 		package: releaseCtrl.packageTitle,
 		release: releaseCtrl.release.version_number,

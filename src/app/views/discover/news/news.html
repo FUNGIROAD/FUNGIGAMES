@@ -68,7 +68,7 @@
 
 			<div class="col-md-8" id="articles-list">
 
-				<div class="alert alert-info full-bleed-xs" ng-if="newsCtrl.section == 'followed'" translate="news.list.followed_help_html"></div>
+				<div class="alert alert-info full-bleed-xs" ng-if="newsCtrl.section == 'followed'" translate>news.list.followed_help_html</div>
 
 				<div class="clearfix">
 					<div class="pull-left">
@@ -106,8 +106,8 @@
 
 				<div ng-if="!newsCtrl.articles.length">
 					<div class="alert alert-warning">
-						<p ng-if="newsCtrl.section != 'followed'" translate="news.list.no_posts_html"></p>
-						<p ng-if="newsCtrl.section == 'followed'" translate="news.list.no_posts_followed_html"></p>
+						<p ng-if="newsCtrl.section != 'followed'" translate>news.list.no_posts_html</p>
+						<p ng-if="newsCtrl.section == 'followed'" translate>news.list.no_posts_followed_html</p>
 					</div>
 				</div>
 

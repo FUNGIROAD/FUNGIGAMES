@@ -1,8 +1,8 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.Trophies.ListCtrl', function( $scope, $translate, $timeout, Translate, Game_Trophy, ModalConfirm, Scroll, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.Trophies.ListCtrl', function( $scope, $timeout, App, Game_Trophy, ModalConfirm, Scroll, gettextCatalog, payload )
 {
 	var _this = this;
 
-	Translate.pageTitle( 'dash.games.trophies.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.trophies.page_title', { game: $scope.manageCtrl.game.title } );
 
 	$scope.Game_Trophy = Game_Trophy;
 

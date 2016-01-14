@@ -29,12 +29,18 @@
 		</div>
 
 		<div class="auth-shell-bottom-links">
-			<a class="link-unstyled anim-fade-in stagger" ng-href="{{ ::Environment.baseUrl }}/terms">
-				{{ ::'legal.terms' | translate }}
+			<a class="link-unstyled anim-fade-in stagger" ng-href="{{ ::Environment.baseUrl }}/terms" translate>
+				auth.legal.terms
 			</a>
-			<a class="link-unstyled anim-fade-in stagger" ng-href="{{ ::Environment.baseUrl }}/privacy">
-				{{ ::'legal.privacy' | translate }}
+			<a class="link-unstyled anim-fade-in stagger" ng-href="{{ ::Environment.baseUrl }}/privacy" translate>
+				auth.legal.privacy
 			</a>
+
+			<select class="form-control" ng-model="App.lang" ng-change="App.onLangChange()">
+				<option value="en">English</option>
+				<option value="nl">Dutch</option>
+				<option value="ro">Romanian</option>
+			</select>
 		</div>
 
 	</div>

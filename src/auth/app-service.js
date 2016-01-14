@@ -1,10 +1,12 @@
-angular.module( 'App' ).service( 'App', function( $window, Environment )
+angular.module( 'App' ).service( 'App', function( $window, Environment, Translate )
 {
 	var _this = this;
 
 	this.ver = null;
 	this.title = '';
 	this.user = null;
+
+	this.lang = 'en';
 
 	this.shouldShowCoverImage = true;
 
@@ -18,5 +20,11 @@ angular.module( 'App' ).service( 'App', function( $window, Environment )
 		// It tells the intro animation that it should play the intro even if it can't find a user.
 		sessionStorage.setItem( 'client-intro-login-play', 'play' );
 		$window.location.href = Environment.wttfBaseUrl + '/dashboard';
+	};
+
+	this.onLangChange = function()
+	{
+		console.log( _this.lang );
+		Translate.setLanguage( _this.lang );
 	};
 } );

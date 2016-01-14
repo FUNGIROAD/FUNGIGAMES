@@ -9,8 +9,7 @@ angular.module( 'App.Views', [] ).config( function( $stateProvider )
 		resolve: {
 			init: function( Translate )
 			{
-				// Bootstrap the translation for this module.
-				return Translate.addParts( 'auth' );
+				return Translate.loadSection( 'main' );
 			},
 			authPayload: function( Api )
 			{

@@ -1,6 +1,6 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.WithdrawFundsCtrl', function( $state, Growls, Translate, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.WithdrawFundsCtrl', function( $state, Growls, App, gettextCatalog, payload )
 {
-	Translate.pageTitle( 'dash.funds.withdraw.page_title' );
+	App.title = gettextCatalog.getString( 'dash.funds.withdraw.page_title' );
 
 	this.minAmount = payload.minAmount || 0;
 	this.revenueTotal = payload.revenueTotal || 0;

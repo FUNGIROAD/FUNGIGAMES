@@ -1,6 +1,6 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.AddCtrl', function( $state, App, Translate )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.AddCtrl', function( $state, App, gettextCatalog )
 {
-	Translate.pageTitle( 'dash.games.news.add.page_title' );
+	App.title = gettextCatalog.getString( 'dash.games.news.add.page_title' );
 
 	this.onSubmitted = function()
 	{

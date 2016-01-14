@@ -1,4 +1,4 @@
-angular.module( 'App.Forms.Dashboard' ).directive( 'gjFormDashboardEmailPreferences', function( $translate, Form, User )
+angular.module( 'App.Forms.Dashboard' ).directive( 'gjFormDashboardEmailPreferences', function( gettextCatalog, Form, User )
 {
 	var form = new Form( {
 		model: 'User',
@@ -35,16 +35,16 @@ angular.module( 'App.Forms.Dashboard' ).directive( 'gjFormDashboardEmailPreferen
 			},
 		];
 
-		var keys = _( scope.notificationTypes )
-			.map( function( item )
-			{
-				return [
-					'dash.email_prefs.' + item.key + '_label',
-					'dash.email_prefs.' + item.key + '_help',
-				];
-			} )
-			.flatten()
-			.value();
+		// var keys = _( scope.notificationTypes )
+		// 	.map( function( item )
+		// 	{
+		// 		return [
+		// 			'dash.email_prefs.' + item.key + '_label',
+		// 			'dash.email_prefs.' + item.key + '_help',
+		// 		];
+		// 	} )
+		// 	.flatten()
+		// 	.value();
 
 		$translate( keys ).then( function( translations )
 		{

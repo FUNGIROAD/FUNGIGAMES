@@ -1,6 +1,6 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Media.ImageCtrl', function( $scope, $state, $translate, Translate, Game_Screenshot, ModalConfirm, Growls, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Media.ImageCtrl', function( $scope, $state, App, Game_Screenshot, ModalConfirm, Growls, gettextCatalog, payload )
 {
-	Translate.pageTitle( 'dash.games.media.image.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.media.image.page_title', { game: $scope.manageCtrl.game.title } );
 
 	this.image = new Game_Screenshot( payload.image );
 

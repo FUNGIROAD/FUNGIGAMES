@@ -1,6 +1,6 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.OverviewCtrl', function( $scope, $interval, $state, Translate, Game, Notification, Fireside_Post, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.OverviewCtrl', function( $scope, $interval, $state, App, Game, Notification, Fireside_Post, gettextCatalog, payload )
 {
-	Translate.pageTitle( 'dash.overview.page_title' );
+	App.title = gettextCatalog.getString( 'dash.overview.page_title' );
 
 	// Keep them undefined if not on the payload.
 	// This will ensure that if they aren't an account with revenue, it won't show the revenue widget.

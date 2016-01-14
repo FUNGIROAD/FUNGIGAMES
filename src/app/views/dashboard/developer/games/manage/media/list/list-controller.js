@@ -1,9 +1,9 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Media.ListCtrl', function(
-	$scope, $translate, Api, Translate, Game_Screenshot, Game_Video, ModalConfirm, payload )
+	$scope, Api, App, Game_Screenshot, Game_Video, ModalConfirm, gettextCatalog, payload )
 {
 	var _this = this;
 
-	Translate.pageTitle( 'dash.games.media.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.media.page_title', { game: $scope.manageCtrl.game.title } );
 
 	this.currentSort = null;
 	this.mediaItems = [];

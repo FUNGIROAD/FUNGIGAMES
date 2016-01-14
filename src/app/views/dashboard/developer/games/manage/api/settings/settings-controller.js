@@ -1,9 +1,9 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.SettingsCtrl', function(
-	$scope, $translate, Translate, Api, ModalConfirm, Growls, payload )
+	$scope, App, Api, ModalConfirm, Growls, gettextCatalog, payload )
 {
 	var _this = this;
 
-	Translate.pageTitle( 'dash.games.api.settings.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.api.settings.page_title', { game: $scope.manageCtrl.game.title } );
 
 	this.privateKey = payload.privateKey;
 	this.shouldShowKey = false;

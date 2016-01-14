@@ -1,9 +1,9 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.MusicCtrl', function(
-	$scope, $translate, Translate, Game_Song, ModalConfirm, payload )
+	$scope, App, Game_Song, ModalConfirm, gettextCatalog, payload )
 {
 	var _this = this;
 
-	Translate.pageTitle( 'dash.games.music.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.music.page_title', { game: $scope.manageCtrl.game.title } );
 
 	this.songs = Game_Song.populate( payload.songs );
 	this.isAdding = false;

@@ -30,6 +30,7 @@ angular.module( 'App', [
 	'gj.ExpandWhen',
 
 	'gj.Tooltip',
+	'gj.Popover',
 	'gj.Growls',
 	'gj.Scroll.AutoScroll',
 
@@ -52,7 +53,7 @@ angular.module( 'App', [
 	// Client.
 	/* inject client:auth:modules */
 ] )
-.config( function( $locationProvider, $uiViewScrollProvider, $compileProvider, $httpProvider, EnvironmentProvider, $sceDelegateProvider )
+.config( function( $locationProvider, $uiViewScrollProvider, $compileProvider, $httpProvider, EnvironmentProvider, $sceDelegateProvider, TranslateProvider )
 {
 	$sceDelegateProvider.resourceUrlWhitelist( [
 		'self',
@@ -90,4 +91,14 @@ angular.module( 'App', [
 		$compileProvider.aHrefSanitizationWhitelist( /^\s*(https?|ftp|mailto|tel|file|app):/ );
 		$compileProvider.imgSrcSanitizationWhitelist( /^\s*((https?|ftp|file|blob|app):|data:image\/)/ );
 	}
+
+	var languages = {
+		main: {
+			en: '/translations/en/main.json',
+			nl: '/translations/nl/main.json',
+			ro: '/translations/ro/main.json',
+		},
+	};
+
+	TranslateProvider.addLanguageUrls( languages );
 } );

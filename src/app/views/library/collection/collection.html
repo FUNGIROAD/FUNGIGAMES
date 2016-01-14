@@ -110,16 +110,16 @@
 
 <!-- No Games Match Filters -->
 <section class="section fill-pink anim-fade-in no-animate-leave" ng-if="collectionCtrl.totalGamesCount && !collectionCtrl.gamesCount">
-	<div class="container" translate="library.collection.no_games_html"></div>
+	<div class="container" translate>library.collection.no_games_html</div>
 </section>
 
 <!-- No Games -->
 <section class="section fill-pink" ng-if="!collectionCtrl.totalGamesCount">
 	<div class="container" ng-switch="collectionCtrl.type">
-		<div ng-switch-when="playlist" translate="library.collection.no_games_playlist_html"></div>
-		<div ng-switch-when="developer" translate="library.collection.no_games_developer_html"></div>
-		<div ng-switch-when="followed" translate="library.collection.no_games_followed_html"></div>
-		<div ng-switch-when="bundle" translate="library.collection.no_games_bundle_html"></div>
-		<div ng-switch-when="tag" translate="library.collection.no_games_tag_html"></div>
+		<div ng-switch-when="playlist" translate>library.collection.no_games_playlist_html</div>
+		<div ng-switch-when="developer" translate>library.collection.no_games_developer_html</div>
+		<div ng-switch-when="followed" translate>library.collection.no_games_followed_html</div>
+		<div ng-switch-when="bundle" translate>library.collection.no_games_bundle_html</div>
+		<div ng-switch-when="tag" translate>library.collection.no_games_tag_html</div>
 	</div>
 </section>

@@ -1,6 +1,6 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.ThumbnailCtrl', function( $scope, Translate, Scroll )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.ThumbnailCtrl', function( $scope, App, Scroll, gettextCatalog )
 {
-	Translate.pageTitle( 'dash.games.thumbnail.page_title', { game: $scope.manageCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.thumbnail.page_title', { game: $scope.manageCtrl.game.title } );
 
 	this.onSaved = function()
 	{

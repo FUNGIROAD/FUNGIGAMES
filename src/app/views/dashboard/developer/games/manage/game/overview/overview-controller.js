@@ -1,9 +1,9 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.OverviewCtrl', function( $scope, $state, $translate, Translate, ModalConfirm, Notification, Game, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.OverviewCtrl', function( $scope, $state, App, ModalConfirm, Notification, Game, gettextCatalog, payload )
 {
 	var manageCtrl = $scope.manageCtrl;
 	var game = manageCtrl.game;
 
-	Translate.pageTitle( 'dash.games.overview.page_title', { game: game.title } );
+	App.title = gettextCatalog.getString( 'dash.games.overview.page_title', { game: game.title } );
 
 	this.viewCount = payload.viewCount || 0;
 	this.downloadCount = payload.downloadCount || 0;

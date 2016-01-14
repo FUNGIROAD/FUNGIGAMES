@@ -222,7 +222,7 @@ angular.module( 'App', [
 	// Client.
 	/* inject client:modules */
 ] )
-.config( function( $locationProvider, $uiViewScrollProvider, $compileProvider, $httpProvider, EnvironmentProvider, $ocLazyLoadProvider, $sceDelegateProvider, amTimeAgoConfig )
+.config( function( $locationProvider, $uiViewScrollProvider, $compileProvider, $httpProvider, EnvironmentProvider, $ocLazyLoadProvider, $sceDelegateProvider, amTimeAgoConfig, TranslateProvider )
 {
 	$sceDelegateProvider.resourceUrlWhitelist( [
 		'self',
@@ -267,6 +267,16 @@ angular.module( 'App', [
 		$compileProvider.aHrefSanitizationWhitelist( /^\s*(https?|ftp|mailto|tel|file|app):/ );
 		$compileProvider.imgSrcSanitizationWhitelist( /^\s*((https?|ftp|file|blob|app):|data:image\/)/ );
 	}
+
+	var languages = {
+		main: {
+			en: '/translations/en/main.json',
+			nl: '/translations/nl/main.json',
+			ro: '/translations/ro/main.json',
+		},
+	};
+
+	TranslateProvider.addLanguageUrls( languages );
 } )
 /**
  * angular-ui-router can't handle redirects between states yet.
@@ -297,30 +307,3 @@ angular.module( 'App', [
 	Analytics.trackTiming( 'shell', 'angular-start', ms );
 } )
 ;
-
-// For lazy loading.
-// TODO: Move this into a component!
-// TODO: Clean it up and get it working for more modules.
-// angular.module( 'App' ).config( function( $futureStateProvider )
-// {
-// 	$futureStateProvider.stateFactory( 'lazy', [ '$ocLazyLoad', 'futureState', function( $ocLazyLoad, futureState )
-// 	{
-// 		// I have no clue why, but for some reason it was failing without the .then().
-// 		return $ocLazyLoad.load( futureState.src ).then( angular.noop );
-// 	} ] );
-
-// 	$futureStateProvider.addResolve( [ '$http', function( $http )
-// 	{
-// 		return $http.get( '/app/modules/dash.json' ).then( function( response )
-// 		{
-// 			angular.forEach( response.data, function( futureState )
-// 			{
-// 				futureState.type = 'lazy';
-// 				futureState.src = [ '/app/modules/dash.js' ];
-// 				futureState.url = futureState.url || '';
-
-// 				$futureStateProvider.futureState( futureState );
-// 			} );
-// 		} );
-// 	} ] );
-// } );

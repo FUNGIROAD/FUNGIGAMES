@@ -4,13 +4,13 @@
 		<h2 class="section-header">{{ ::'dash.games.trophies.heading' | translate }}</h2>
 
 		<div class="page-help">
-			<div translate="dash.games.trophies.page_help_html"></div>
+			<div translate>dash.games.trophies.page_help_html</div>
 			<p>
 				<a class="link-help" href="https://help.gamejolt.com/dev-trophies" target="_blank">{{ ::'dash.games.trophies.page_help_link' | translate }}</a>
 			</p>
 		</div>
 
-		<div class="alert alert-warning" ng-if="listCtrl.hasHiddenTrophies" translate="dash.games.trophies.has_hidden_html"></div>
+		<div class="alert alert-warning" ng-if="listCtrl.hasHiddenTrophies" translate>dash.games.trophies.has_hidden_html</div>
 
 		<div ng-repeat="difficulty in Game_Trophy.difficulties track by $index">
 

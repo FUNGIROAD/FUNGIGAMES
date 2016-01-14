@@ -52,7 +52,8 @@
 
 				<button gj-form-submit-button class="i-button" ng-disabled="!thumbnailForm.$valid" ng-click="onSubmit()">
 					<span class="jolticon jolticon-edit"></span>
-					{{ (formModel.file || !formModel.thumbnail_media_item || !canCrop ? 'dash.games.thumbnail.upload_button' : 'dash.games.thumbnail.save_button') | translate }}
+					<span ng-if="formModel.file || !formModel.thumbnail_media_item || !canCrop">{{ 'dash.games.thumbnail.upload_button' | translate }}</span>
+					<span ng-if="!formModel.file && formModel.thumbnail_media_item && canCrop">{{ 'dash.games.thumbnail.save_button' | translate }}</span>
 				</button>
 			</div>
 

@@ -11,7 +11,7 @@
 				<control-errors></control-errors>
 			</form-group>
 
-			<form-group name="file" label="{{ 'dash.games.music.form.' + (method == 'add' ? 'add' : 'change') + '_file_label' | translate }}" optional="method == 'edit'">
+			<form-group name="file" label="{{ getFileLabel() }}" optional="method == 'edit'">
 				<p class="help-block">{{ 'dash.games.music.form.file_help_block' | translate:{ maxFilesize: maxFilesize / 1024 / 1024 } }}</p>
 
 				<gj-form-upload-control

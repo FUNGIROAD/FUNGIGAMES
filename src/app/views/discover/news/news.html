@@ -30,7 +30,7 @@
 				</li>
 				<li ng-if="App.user">
 					<a ui-sref="^.news.list-section( { section: 'followed', sort: undefined } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.followed_tooltip' )"
+						gj-tooltip="{{ 'news.list.followed_tooltip' | translate }}"
 						tooltip-placement="bottom"
 						>
 						{{ ::'news.list.followed_tab' | translate }}
@@ -38,7 +38,7 @@
 				</li>
 				<li>
 					<a ui-sref="^.news.list-section( { section: 'in-development' } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.wip_tooltip' )"
+						gj-tooltip="{{ 'news.list.wip_tooltip' | translate }}"
 						tooltip-placement="bottom"
 						>
 						{{ ::'news.list.wip_tab' | translate }}
@@ -46,7 +46,7 @@
 				</li>
 				<li>
 					<a ui-sref="^.news.list-section( { section: 'released' } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.released_tooltip' )"
+						gj-tooltip="{{ 'news.list.released_tooltip' | translate }}"
 						tooltip-placement="bottom"
 						>
 						{{ ::'news.list.released_tab' | translate }}

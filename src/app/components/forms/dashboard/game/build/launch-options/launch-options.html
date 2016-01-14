@@ -10,7 +10,7 @@
 			<input form-control="text" ng-maxlength="500">
 			<input-group-addon>
 				<a class="link-unstyled"
-					gj-tooltip="$translate.instant( 'dash.games.releases.builds.launch_options.form.file_selector_tooltip' )"
+					gj-tooltip="{{ 'dash.games.releases.builds.launch_options.form.file_selector_tooltip' | translate }}"
 					ng-click="openFileSelector( platform.key )"
 					>
 					<span class="jolticon jolticon-ellipsis-h"></span>

@@ -48,14 +48,14 @@
 
 									<a class="media-item-edit"
 										ui-sref="^.{{ item.media_type }}( { {{ item.media_type + 'Id' }}: item.id } )"
-										gj-tooltip="$translate.instant( 'dash.games.media.edit_' + item.media_type + '_button' )"
+										gj-tooltip="{{ ::listCtrl.getEditTooltip( item ) | translate }}"
 										>
 										<span class="jolticon jolticon-edit"></span>
 									</a>
 
 									<a class="media-item-remove"
 										ng-click="listCtrl.removeItem( item )"
-										gj-tooltip="$translate.instant( 'dash.games.media.remove_' + item.media_type + '_button' )"
+										gj-tooltip="{{ ::listCtrl.getRemoveTooltip( item ) | translate }}"
 										>
 										<span class="jolticon jolticon-remove"></span>
 									</a>

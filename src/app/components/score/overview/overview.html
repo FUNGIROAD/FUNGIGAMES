@@ -90,7 +90,7 @@
 						<br>
 
 						<div>
-							<span gj-tooltip="$translate.instant( 'scores.overview.user_best_exp_tooltip', { experience: ctrl.userScoreExperience } )">
+							<span gj-tooltip="{{ 'scores.overview.user_best_exp_tooltip' | translate:{ experience: ctrl.userScoreExperience } }}">
 								<span class="jolticon jolticon-exp text-muted" style="vertical-align: middle"></span>
 								{{ ::ctrl.userScoreExperience | number }}
 								<span class="initialism">{{ ::'leveling.exp' | translate }}</span>

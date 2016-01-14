@@ -19,8 +19,6 @@ angular.module( 'App.Rating.Widget' ).directive( 'gjRatingWidget', function()
 			this.hovered = 0;
 			this.isProcessing = false;
 
-			this.clearLabel = gettextCatalog.getString( 'rating.clear' );
-
 			this.labels.push( gettextCatalog.getString( 'rating.one' ) );
 			this.labels.push( gettextCatalog.getString( 'rating.two' ) );
 			this.labels.push( gettextCatalog.getString( 'rating.three' ) );

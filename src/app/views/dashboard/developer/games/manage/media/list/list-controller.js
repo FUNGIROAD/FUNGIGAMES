@@ -22,6 +22,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 
 	this.removeItem = removeItem;
 	this.onMediaSorted = onMediaSorted;
+	this.getEditTooltip = getEditTooltip;
 
 	function onMediaSorted()
 	{
@@ -69,5 +70,25 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 	function updateSort()
 	{
 		_this.currentSort = getSort();
+	}
+
+	function getEditTooltip( item )
+	{
+		if ( item.media_type == 'image' ) {
+			return gettextCatalog.getString( 'dash.games.media.edit_image_button' );
+		}
+		else if ( item.media_type == 'video' ) {
+			return gettextCatalog.getString( 'dash.games.media.edit_video_button' );
+		}
+	}
+
+	function getRemoveTooltip( item )
+	{
+		if ( item.media_type == 'image' ) {
+			return gettextCatalog.getString( 'dash.games.media.remove_image_button' );
+		}
+		else if ( item.media_type == 'video' ) {
+			return gettextCatalog.getString( 'dash.games.media.remove_video_button' );
+		}
 	}
 } );

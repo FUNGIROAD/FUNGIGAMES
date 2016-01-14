@@ -42,35 +42,35 @@
 
 							<p class="tags">
 								<span class="tag tag-active"
-									gj-tooltip="$translate.instant( 'dash.games.scoreboards.primary_tooltip' )"
+									tooltip="{{ 'dash.games.scoreboards.primary_tooltip' | translate }}"
 									ng-if="$index == 0"
 									translate
 									>
 									dash.games.scoreboards.primary_tag
 								</span>
 								<span class="tag tag-blue"
-									gj-tooltip="$translate.instant( 'dash.games.scoreboards.guest_tooltip' )"
+									tooltip="{{ 'dash.games.scoreboards.guest_tooltip' | translate }}"
 									ng-if="scoreTable.allow_guest_scores"
 									translate
 									>
 									dash.games.scoreboards.guest_tag
 								</span>
 								<span class="tag tag-blue"
-									gj-tooltip="$translate.instant( 'dash.games.scoreboards.unique_tooltip' )"
+									tooltip="{{ 'dash.games.scoreboards.unique_tooltip' | translate }}"
 									ng-if="scoreTable.unique_scores"
 									translate
 									>
 									dash.games.scoreboards.unique_tag
 								</span>
 								<span class="tag tag-blue"
-									gj-tooltip="$translate.instant( 'dash.games.scoreboards.asc_tooltip' )"
+									tooltip="{{ 'dash.games.scoreboards.asc_tooltip' | translate }}"
 									ng-if="scoreTable.scores_sorting_direction == Game_ScoreTable.SORTING_DIRECTION_ASC"
 									translate
 									>
 									dash.games.scoreboards.asc_tag
 								</span>
 								<span class="tag tag-blue"
-									gj-tooltip="$translate.instant( 'dash.games.scoreboards.desc_tooltip' )"
+									tooltip="{{ 'dash.games.scoreboards.desc_tooltip' | translate }}"
 									ng-if="scoreTable.scores_sorting_direction == Game_ScoreTable.SORTING_DIRECTION_DESC"
 									translate
 									>

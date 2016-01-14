@@ -62,8 +62,8 @@
 									<p class="editable-accordion-item-heading-description">{{ trophy.description }}</p>
 
 									<div class="trophy-list-tags" ng-if="!trophy.visible || trophy.secret">
-										<span ng-if="!trophy.visible" class="tag tag-pink" gj-tooltip="$translate.instant( 'dash.games.trophies.hidden_tooltip' )">{{ ::'dash.games.trophies.hidden_tag' | translate }}</span>
-										<span ng-if="trophy.secret" class="tag" gj-tooltip="$translate.instant( 'dash.games.trophies.secret_tooltip' )">{{ ::'dash.games.trophies.secret_tag' | translate }}</span>
+										<span ng-if="!trophy.visible" class="tag tag-pink" tooltip="{{ 'dash.games.trophies.hidden_tooltip' | translate }}">{{ ::'dash.games.trophies.hidden_tag' | translate }}</span>
+										<span ng-if="trophy.secret" class="tag" tooltip="{{ 'dash.games.trophies.secret_tooltip' | translate }}">{{ ::'dash.games.trophies.secret_tag' | translate }}</span>
 									</div>
 								</div>
 

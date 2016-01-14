@@ -8,7 +8,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 	{
 		var video = this.video;
 
-		ModalConfirm.show( $translate.instant( 'dash.games.media.video.remove_confirmation' ) ).then( function()
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.media.video.remove_confirmation' ) ).then( function()
 		{
 			return video.$remove();
 		} )

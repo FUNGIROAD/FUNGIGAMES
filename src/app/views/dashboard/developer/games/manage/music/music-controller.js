@@ -42,7 +42,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Musi
 
 	function removeSong( song )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.music.remove_confirmation' ) ).then( function()
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.music.remove_confirmation' ) ).then( function()
 		{
 			return song.$remove();
 		} )

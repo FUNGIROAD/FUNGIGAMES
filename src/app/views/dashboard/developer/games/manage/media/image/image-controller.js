@@ -8,7 +8,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 	{
 		var image = this.image;
 
-		ModalConfirm.show( $translate.instant( 'dash.games.media.image.remove_confirmation' ) ).then( function()
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.media.image.remove_confirmation' ) ).then( function()
 		{
 			return image.$remove();
 		} )

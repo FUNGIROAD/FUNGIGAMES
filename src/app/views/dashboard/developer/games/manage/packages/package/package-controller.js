@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Packages.PackageCtrl', function(
-	$scope, $state, $translate, Translate, Game_Package, Game_Release, ModalConfirm, Growls, packagePayload )
+	$scope, $state, Game_Package, Game_Release, ModalConfirm, Growls, gettextCatalog, packagePayload )
 {
 	$scope.Game_Release = Game_Release;
 
@@ -15,7 +15,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 	function removePackage()
 	{
 		var _this = this;
-		ModalConfirm.show( $translate.instant( 'dash.games.packages.manage.remove_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.packages.manage.remove_confirmation' ) )
 			.then( function()
 			{
 				return _this.package.$remove();

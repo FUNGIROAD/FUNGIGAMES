@@ -1,4 +1,4 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.ArticleCtrl', function( $state, $translate, ModalConfirm, Translate )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.ArticleCtrl', function( $state, ModalConfirm, gettextCatalog )
 {
 	var _this = this;
 
@@ -10,7 +10,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News
 			throw new Error( 'No article loaded.' );
 		}
 
-		ModalConfirm.show( $translate.instant( 'dash.games.news.article.remove_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.news.article.remove_confirmation' ) )
 			.then( function()
 			{
 				return _this.article.$remove();

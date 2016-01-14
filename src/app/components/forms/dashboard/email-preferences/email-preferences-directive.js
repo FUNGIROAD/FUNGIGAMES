@@ -46,18 +46,18 @@ angular.module( 'App.Forms.Dashboard' ).directive( 'gjFormDashboardEmailPreferen
 		// 	.flatten()
 		// 	.value();
 
-		$translate( keys ).then( function( translations )
-		{
-			for ( var i = 0; i < scope.notificationTypes.length; ++i ) {
-				var item = scope.notificationTypes[i];
-				var key = 'dash.email_prefs.' + item.key;
-				item.label = translations[ key + '_label' ];
+		// $translate( keys ).then( function( translations )
+		// {
+		// 	for ( var i = 0; i < scope.notificationTypes.length; ++i ) {
+		// 		var item = scope.notificationTypes[i];
+		// 		var key = 'dash.email_prefs.' + item.key;
+		// 		item.label = translations[ key + '_label' ];
 
-				if ( translations[ key + '_help' ] != key + '_help' ) {
-					item.help = translations[ key + '_help' ];
-				}
-			}
-		} );
+		// 		if ( translations[ key + '_help' ] != key + '_help' ) {
+		// 			item.help = translations[ key + '_help' ];
+		// 		}
+		// 	}
+		// } );
 	};
 
 	return form;

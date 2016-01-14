@@ -22,31 +22,31 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Activity.ListCtrl', functio
 		},
 		{
 			key: Notification.TYPE_GAME_NEWS_ADD,
-			label: gettextCatalog.getString( 'notifications.game_news_label' ),
+			label: gettextCatalog.getString( 'main.notifications.game_news_label' ),
 		},
 		{
 			key: Notification.TYPE_COMMENT_ADD,
-			label: gettextCatalog.getString( 'notifications.comment_replies_label' ),
+			label: gettextCatalog.getString( 'main.notifications.comment_replies_label' ),
 		},
 		{
 			key: Notification.TYPE_FORUM_POST_ADD,
-			label: gettextCatalog.getString( 'notifications.forum_posts_label' ),
+			label: gettextCatalog.getString( 'main.notifications.forum_posts_label' ),
 		},
 		{
 			key: Notification.TYPE_FRIENDSHIP_ACCEPT,
-			label: gettextCatalog.getString( 'notifications.new_friends_label' ),
+			label: gettextCatalog.getString( 'main.notifications.new_friends_label' ),
 		},
 		{
 			key: Notification.TYPE_COMMENT_ADD_OBJECT_OWNER,
-			label: gettextCatalog.getString( 'notifications.new_comments_label' ),
+			label: gettextCatalog.getString( 'main.notifications.new_comments_label' ),
 		},
 		{
 			key: Notification.TYPE_GAME_RATING_ADD,
-			label: gettextCatalog.getString( 'notifications.game_ratings_label' ),
+			label: gettextCatalog.getString( 'main.notifications.game_ratings_label' ),
 		},
 		{
 			key: Notification.TYPE_GAME_FOLLOW,
-			label: gettextCatalog.getString( 'notifications.game_follows_label' ),
+			label: gettextCatalog.getString( 'main.notifications.game_follows_label' ),
 		},
 	];
 
@@ -74,9 +74,9 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Activity.ListCtrl', functio
 
 	this.markAllRead = function()
 	{
-		var msg = gettextCatalog.getString( 'notifications.clear_all_confirmation' );
+		var msg = gettextCatalog.getString( 'main.notifications.clear_all_confirmation' );
 		if ( this.currentNotificationType.key ) {
-			msg = gettextCatalog.getString( 'notifications.clear_all_of_type_confirmation' );
+			msg = gettextCatalog.getString( 'main.notifications.clear_all_of_type_confirmation' );
 		}
 
 		ModalConfirm.show( msg )
@@ -92,6 +92,6 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Activity.ListCtrl', functio
 
 	this.getUnreadTooltip = function( count )
 	{
-		gettextCatalog.getPlural( count, 'notifications.unread_tooltip', 'notifications.unread_tooltip' );
+		gettextCatalog.getPlural( count, 'main.notifications.unread_tooltip', 'main.notifications.unread_tooltip' );
 	};
 } );

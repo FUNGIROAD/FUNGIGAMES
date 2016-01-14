@@ -3,7 +3,7 @@
 	<h2 ng-class="{ 'section-header': Screen.isDesktop || ctrl.size == 'full' }">
 		<span class="jolticon jolticon-trophy big"></span>
 		<a class="link-unstyled" ui-sref="discover.games.view.trophies.list( { slug: ctrl.game.slug, id: ctrl.game.id } )">
-			{{ ::'trophies.overview.heading' | translate }}
+			{{ ::'main.trophies.overview.heading' | translate }}
 		</a>
 		<small>({{ ::ctrl.trophies.length | number }})</small>
 	</h2>
@@ -52,18 +52,18 @@
 
 			<p ng-if="ctrl.extraCount">
 				<a class="link-muted small" ui-sref="discover.games.view.trophies.list( { slug: ctrl.game.slug, id: ctrl.game.id } )">
-					{{ 'trophies.overview.more_link' | translate:{ extraCount: ctrl.extraCount } }}
+					{{ 'main.trophies.overview.more_link' | translate:{ extraCount: ctrl.extraCount } }}
 				</a>
 			</p>
 
 			<div class="alert alert-warning" ng-if="::ctrl.showInvisibleTrophyMessage">
-				{{ ::'trophies.invisible_trophies_message' | translate }}
+				{{ ::'main.trophies.invisible_trophies_message' | translate }}
 			</div>
 
 			<p>
 				<a class="i-button big" ui-sref="discover.games.view.trophies.list( { slug: ctrl.game.slug, id: ctrl.game.id } )">
 					<span class="jolticon jolticon-media-list"></span>
-					{{ ::'trophies.overview.view_more_button' | translate }}
+					{{ ::'main.trophies.overview.view_more_button' | translate }}
 				</a>
 			</p>
 

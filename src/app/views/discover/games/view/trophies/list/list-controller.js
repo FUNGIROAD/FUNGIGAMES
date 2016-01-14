@@ -2,7 +2,7 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.View.Trophies.ListCtrl
 {
 	var _this = this;
 
-	App.title = gettextCatalog.getString( 'game.trophies.page_title', { game: $scope.gameCtrl.game.title } );
+	App.title = gettextCatalog.getString( 'main.game.trophies.page_title', { game: $scope.gameCtrl.game.title } );
 
 	this.trophies = Game_Trophy.populate( payload.trophies );
 	this.achieved = payload.achievedTrophies ? User_GameTrophy.populate( payload.achievedTrophies ) : [];

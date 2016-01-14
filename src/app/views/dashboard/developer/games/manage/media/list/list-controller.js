@@ -38,8 +38,8 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 
 	function removeItem( item )
 	{
-		var message = $translate.instant( 'dash.games.media.remove_confirmation', {
-			type: $translate.instant( 'dash.games.media.' + item.media_type + '_label' ).toLowerCase(),
+		var message = gettextCatalog.getString( 'dash.games.media.remove_confirmation', {
+			type: gettextCatalog.getString( 'dash.games.media.' + item.media_type + '_label' ).toLowerCase(),
 		} );
 
 		ModalConfirm.show( message ).then( function()

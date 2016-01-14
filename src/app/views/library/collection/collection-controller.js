@@ -1,7 +1,7 @@
 angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
-	$scope, $state, $translate, Location, Translate, App, Meta, AutoScroll, ModalConfirm, Growls, GamePlaylist_SaveModal,
+	$scope, $state, Location, Translate, App, Meta, AutoScroll, ModalConfirm, Growls, GamePlaylist_SaveModal,
 	GameCollection, GamePlaylist, GameBundle, User,
-	filteringContainer )
+	gettextCatalog, filteringContainer )
 {
 	var _this = this;
 
@@ -18,14 +18,14 @@ angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
 	this.isFollowing = false;
 
 	this.developerSorting = {
-		'': $translate.instant( 'sorting.new' ),
-		'best': $translate.instant( 'sorting.best' ),
+		'': gettextCatalog.getString( 'main.sorting.new' ),
+		'best': gettextCatalog.getString( 'main.sorting.best' ),
 	};
 
 	this.tagSorting = {
-		'': $translate.instant( 'sorting.best' ),
-		'hot': $translate.instant( 'sorting.hot' ),
-		'new': $translate.instant( 'sorting.new' ),
+		'': gettextCatalog.getString( 'main.sorting.best' ),
+		'hot': gettextCatalog.getString( 'main.sorting.hot' ),
+		'new': gettextCatalog.getString( 'main.sorting.new' ),
 	};
 
 	this.processPayload = function( payload, $stateParams )
@@ -66,28 +66,28 @@ angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
 			user = new User( payload.user );
 			this.user = user;
 			this.isOwner = App.user && user.id == App.user.id;
-			App.title = $translate.instant( 'library.collection.followed_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { user: user.display_name } );
+			App.title = gettextCatalog.getString( 'library.collection.followed_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { user: user.display_name } );
 		}
 		else if ( this.type == 'playlist' ) {
 			playlist = new GamePlaylist( payload.playlist );
 			this.playlist = playlist;
 			this.isOwner = App.user && playlist.user.id == App.user.id;
-			App.title = $translate.instant( 'library.collection.playlist_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { playlist: playlist.name, user: playlist.user.display_name } );
+			App.title = gettextCatalog.getString( 'library.collection.playlist_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { playlist: playlist.name, user: playlist.user.display_name } );
 		}
 		else if ( this.type == 'developer' ) {
 			user = new User( payload.developer );
 			this.user = user;
 			this.isOwner = App.user && user.id == App.user.id;
-			App.title = $translate.instant( 'library.collection.developer_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { user: user.display_name } );
+			App.title = gettextCatalog.getString( 'library.collection.developer_' + (this.isOwner ? 'owner_' : '' ) + 'page_title', { user: user.display_name } );
 		}
 		else if ( this.type == 'bundle' ) {
 			bundle = new GameBundle( payload.bundle );
 			this.bundle = bundle;
-			App.title = $translate.instant( 'library.collection.bundle_page_title', { bundle: bundle.title } );
+			App.title = gettextCatalog.getString( 'library.collection.bundle_page_title', { bundle: bundle.title } );
 		}
 		else if ( this.type == 'tag' ) {
 			this.tag = this.collection.id;
-			App.title = $translate.instant( 'library.collection.tag_page_title', { tag: this.collection.id } );
+			App.title = gettextCatalog.getString( 'library.collection.tag_page_title', { tag: this.collection.id } );
 		}
 
 		if ( payload.metaTitle ) {
@@ -201,7 +201,7 @@ angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
 
 	this.removePlaylist = function()
 	{
-		ModalConfirm.show( $translate.instant( 'library.playlists.remove_playlist_confirmation', { playlist: _this.playlist.name } ) )
+		ModalConfirm.show( gettextCatalog.getString( 'library.playlists.remove_playlist_confirmation', { playlist: _this.playlist.name } ) )
 			.then( function()
 			{
 				_this.playlist.$remove().then( function()

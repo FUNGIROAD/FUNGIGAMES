@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.ManageCtrl', function(
-	$scope, $state, $translate, Translate, Growls, ModalConfirm, Game, managePayload )
+	$scope, $state, Growls, ModalConfirm, Game, gettextCatalog, managePayload )
 {
 	var _this = this;
 
@@ -10,7 +10,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.ManageCtrl'
 
 	this.removeGame = function()
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.remove_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.remove_confirmation' ) )
 			.then( function()
 			{
 				return _this.game.$remove();

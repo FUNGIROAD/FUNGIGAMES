@@ -10,7 +10,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 
 	this.generateNewKey = function()
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.api.settings.generate_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.api.settings.generate_confirmation' ) )
 			.then( function()
 			{
 				// Make sure it's a POST request.
@@ -22,8 +22,8 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 					_this.privateKey = response.newKey;
 					_this.shouldShowKey = true;
 					Growls.success( {
-						title: $translate.instant( 'dash.games.api.settings.generate_growl_title' ),
-						message: $translate.instant( 'dash.games.api.settings.generate_growl' ),
+						title: gettextCatalog.getString( 'dash.games.api.settings.generate_growl_title' ),
+						message: gettextCatalog.getString( 'dash.games.api.settings.generate_growl' ),
 						sticky: true,
 					} );
 				}

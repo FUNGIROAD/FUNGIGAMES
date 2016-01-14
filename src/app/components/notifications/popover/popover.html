@@ -12,7 +12,7 @@
 		ng-click="ctrl.close()"
 		>
 		<span class="jolticon jolticon-notifications"></span>
-		{{ ::'notifications.popover.view_all_button' | translate }}
+		{{ ::'main.notifications.popover.view_all_button' | translate }}
 	</a>
 
 	<div ng-if="ctrl.isLoading && ctrl.isShown">
@@ -23,14 +23,14 @@
 	<div ng-if="!ctrl.isLoading">
 
 		<div class="alert alert-warning" ng-if="!ctrl.notifications.length">
-			{{ ::'notifications.popover.no_notifications' | translate }}
+			{{ ::'main.notifications.popover.no_notifications' | translate }}
 		</div>
 
 		<div class="notifications-popover-container-controls"
 			ng-if="ctrl.notifications.length"
 			>
 			<a class="link-muted" ng-click="ctrl.dismissAll()">
-				({{ ::'notifications.popover.dismiss_all' | translate }})
+				({{ ::'main.notifications.popover.dismiss_all' | translate }})
 			</a>
 		</div>
 
@@ -80,10 +80,10 @@
 			>
 			<span class="jolticon jolticon-notifications"></span>
 			<span ng-if="ctrl.leftoverCount == 1">
-				{{ ::'notifications.popover.more_notifications_one_button' | translate }}
+				{{ ::'main.notifications.popover.more_notifications_one_button' | translate }}
 			</span>
 			<span ng-if="ctrl.leftoverCount > 1">
-				{{ ::'notifications.popover.more_notifications_other_button' | translate:{ count: ctrl.leftoverCount } }}
+				{{ ::'main.notifications.popover.more_notifications_other_button' | translate:{ count: ctrl.leftoverCount } }}
 			</span>
 		</a>
 	</div>

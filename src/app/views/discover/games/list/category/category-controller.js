@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', function(
-	$scope, $state, $stateParams, $translate, $timeout, $interval, App, Meta, Translate, Game, SplitTest, dateFilter, payload )
+	$scope, $state, $stateParams, $timeout, $interval, App, Meta, Translate, Game, SplitTest, dateFilter, gettextCatalog, payload )
 {
 	var _this = this;
 
@@ -38,17 +38,17 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', fu
 
 	if ( section == 'by-date' ) {
 		if ( !listCtrl.dateRange ) {
-			App.title = $translate.instant( 'games.list.date_page_title', { date: listCtrl.date } );
+			App.title = gettextCatalog.getString( 'games.list.date_page_title', { date: listCtrl.date } );
 		}
 		else {
-			App.title = $translate.instant( 'games.list.date_range_page_title', { dateStart: listCtrl.dateRange[0], dateEnd: listCtrl.dateRange[1] } );
+			App.title = gettextCatalog.getString( 'games.list.date_range_page_title', { dateStart: listCtrl.dateRange[0], dateEnd: listCtrl.dateRange[1] } );
 		}
 	}
 	else {
-		var sectionHuman = $translate.instant( 'games.list.section_' + section );
+		var sectionHuman = gettextCatalog.getString( 'games.list.section_' + section );
 		var categoryHuman = ' ';
 		if ( category ) {
-			categoryHuman = $translate.instant( 'discover.categories.' + category.replace( '-', '_' ) );
+			categoryHuman = gettextCatalog.getString( 'discover.categories.' + category.replace( '-', '_' ) );
 			categoryHuman = (' ' + categoryHuman + ' ');
 		}
 
@@ -60,18 +60,18 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', fu
 			translationId += '_other';
 		}
 
-		App.title = $translate.instant( translationId, { section: sectionHuman, category: categoryHuman } );
+		App.title = gettextCatalog.getString( translationId, { section: sectionHuman, category: categoryHuman } );
 		Meta.description = payload.metaDescription;
 
 		if ( category == 'rpg' ) {
-			listCtrl.descriptiveCategory = $translate.instant( 'games.list.descriptive_category_rpg', { category: categoryHuman } );
+			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category_rpg', { category: categoryHuman } );
 		}
 		else if ( category == 'other' ) {
-			listCtrl.descriptiveCategory = $translate.instant( 'games.list.descriptive_category_other', { category: categoryHuman } );
+			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category_other', { category: categoryHuman } );
 		}
 		else {
 			// In the case of no category, categoryHuman will be ''.
-			listCtrl.descriptiveCategory = $translate.instant( 'games.list.descriptive_category', { category: categoryHuman } );
+			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category', { category: categoryHuman } );
 		}
 	}
 
@@ -84,7 +84,6 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', fu
 		'arcade': '/app/img/categories/arcade.png',
 		'action': '/app/img/categories/action.png',
 		'adventure': '/app/img/categories/adventure.png',
-		'rpg': '/app/img/categories/rpg.png',
 		'rpg': '/app/img/categories/rpg.png',
 		'strategy-sim': '/app/img/categories/strategy-sim.png',
 		'platformer': '/app/img/categories/platformer.png',

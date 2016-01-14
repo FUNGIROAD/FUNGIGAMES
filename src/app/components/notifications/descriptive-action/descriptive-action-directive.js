@@ -19,7 +19,7 @@ angular.module( 'App.Notifications.DescriptiveAction' ).directive( 'gjNotificati
 		link: function( scope, element, attrs )
 		{
 			scope.Notification = Notification;
-			scope.translationKey = 'notifications.' + translationMapping[ scope.notification.type ];
+			scope.translationKey = 'main.notifications.' + translationMapping[ scope.notification.type ];
 
 			// If this is a descriptive action in the popover, we do things a bit differently.
 			var inPopover = false;
@@ -29,7 +29,7 @@ angular.module( 'App.Notifications.DescriptiveAction' ).directive( 'gjNotificati
 
 			if ( scope.notification.type == Notification.TYPE_GAME_RATING_ADD ) {
 				if ( inPopover ) {
-					scope.translationKey = 'notifications.rating_title_popover_html';
+					scope.translationKey = 'main.notifications.rating_title_popover_html';
 				}
 
 				scope.translationValues = {
@@ -38,7 +38,7 @@ angular.module( 'App.Notifications.DescriptiveAction' ).directive( 'gjNotificati
 			}
 			else if ( scope.notification.type == Notification.TYPE_GAME_NEWS_ADD ) {
 				if ( inPopover ) {
-					scope.translationKey = 'notifications.game_news_title_popover_html';
+					scope.translationKey = 'main.notifications.game_news_title_popover_html';
 				}
 
 				scope.translationValues = {

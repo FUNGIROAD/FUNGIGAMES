@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Packages.ReleaseCtrl', function(
-	$scope, $state, $stateParams, $translate, Translate, App, Game_Package, Game_Release, Game_Build, ModalConfirm, Growls, AutoScroll, payload )
+	$scope, $state, $stateParams, App, Game_Package, Game_Release, Game_Build, ModalConfirm, Growls, AutoScroll, gettextCatalog, payload )
 {
 	var _this = this;
 
@@ -25,7 +25,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	function publishRelease( release )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.releases.manage.publish_release_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.releases.manage.publish_release_confirmation' ) )
 			.then( function()
 			{
 				return release.$publish();
@@ -38,7 +38,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	function unpublishRelease( release )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.releases.manage.unpublish_release_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.releases.manage.unpublish_release_confirmation' ) )
 			.then( function()
 			{
 				return release.$unpublish();
@@ -51,7 +51,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	function removeRelease()
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.releases.manage.remove_release_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.releases.manage.remove_release_confirmation' ) )
 			.then( function()
 			{
 				return _this.release.$remove();

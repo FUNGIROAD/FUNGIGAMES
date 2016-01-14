@@ -29,31 +29,31 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 	this.platformsInfo = {
 		windows: {
 			icon: 'windows',
-			label: $translate.instant( 'dash.games.releases.builds.windows_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.windows_tag' ),
 		},
 		windows_64: {
 			icon: 'windows',
-			label: $translate.instant( 'dash.games.releases.builds.windows_64_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.windows_64_tag' ),
 		},
 		mac: {
 			icon: 'mac',
-			label: $translate.instant( 'dash.games.releases.builds.mac_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.mac_tag' ),
 		},
 		mac_64: {
 			icon: 'mac',
-			label: $translate.instant( 'dash.games.releases.builds.mac_64_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.mac_64_tag' ),
 		},
 		linux: {
 			icon: 'linux',
-			label: $translate.instant( 'dash.games.releases.builds.linux_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.linux_tag' ),
 		},
 		linux_64: {
 			icon: 'linux',
-			label: $translate.instant( 'dash.games.releases.builds.linux_64_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.linux_64_tag' ),
 		},
 		other: {
 			icon: 'other-os',
-			label: $translate.instant( 'dash.games.releases.builds.other_tag' ),
+			label: gettextCatalog.getString( 'dash.games.releases.builds.other_tag' ),
 		},
 	};
 
@@ -163,7 +163,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	function removeBuild( build )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.releases.builds.remove_build_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.releases.builds.remove_build_confirmation' ) )
 			.then( function()
 			{
 				return build.$remove();
@@ -209,7 +209,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	function removeFile( file )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.releases.builds.remove_extra_file_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.releases.builds.remove_extra_file_confirmation' ) )
 			.then( function()
 			{
 				return file.$remove( manageCtrl.game.id, releaseCtrl.package.id, releaseCtrl.release.id );

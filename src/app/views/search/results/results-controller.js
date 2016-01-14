@@ -8,11 +8,11 @@ angular.module( 'App.Views' ).controller( 'Search.ResultsCtrl', function( $scope
 	searchCtrl.noResults = false;
 
 	if ( !$stateParams.q ) {
-		App.title = gettextCatalog.getString( 'search.page_title' );
+		App.title = gettextCatalog.getString( 'main.search.page_title' );
 		return;
 	}
 
-	App.title = gettextCatalog.getString( 'search.results.page_title', { query: $stateParams.q } );
+	App.title = gettextCatalog.getString( 'main.search.results.page_title', { query: $stateParams.q } );
 
 	searchCtrl.query = $stateParams.q;
 

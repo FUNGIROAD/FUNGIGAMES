@@ -1,10 +1,10 @@
 <header class="section">
 	<div class="container">
 		<h1 ng-switch="newsCtrl.section">
-			<span ng-switch-when="hot">{{ ::'news.list.all_heading' | translate }}</span>
-			<span ng-switch-when="followed">{{ ::'news.list.followed_heading' | translate }}</span>
-			<span ng-switch-when="in-development">{{ ::'news.list.wip_heading' | translate }}</span>
-			<span ng-switch-when="released">{{ ::'news.list.released_heading' | translate }}</span>
+			<span ng-switch-when="hot">{{ ::'main.news.list.all_heading' | translate }}</span>
+			<span ng-switch-when="followed">{{ ::'main.news.list.followed_heading' | translate }}</span>
+			<span ng-switch-when="in-development">{{ ::'main.news.list.wip_heading' | translate }}</span>
+			<span ng-switch-when="released">{{ ::'main.news.list.released_heading' | translate }}</span>
 		</h1>
 
 		<p class="small text-muted" ng-if="newsCtrl.section == 'hot'">
@@ -15,41 +15,41 @@
 		</p>
 
 		<p class="text-muted small" ng-switch="newsCtrl.section">
-			<span ng-switch-when="hot">{{ ::'news.list.all_descriptive_html' | translate }}</span>
-			<span ng-switch-when="followed">{{ ::'news.list.followed_descriptive_html' | translate }}</span>
-			<span ng-switch-when="in-development">{{ ::'news.list.wip_descriptive_html' | translate }}</span>
-			<span ng-switch-when="released">{{ ::'news.list.released_descriptive_html' | translate }}</span>
+			<span ng-switch-when="hot">{{ ::'main.news.list.all_descriptive_html' | translate }}</span>
+			<span ng-switch-when="followed">{{ ::'main.news.list.followed_descriptive_html' | translate }}</span>
+			<span ng-switch-when="in-development">{{ ::'main.news.list.wip_descriptive_html' | translate }}</span>
+			<span ng-switch-when="released">{{ ::'main.news.list.released_descriptive_html' | translate }}</span>
 		</p>
 
 		<nav class="platform-list inline">
 			<ul>
 				<li>
 					<a ui-sref="^.news.list" ui-sref-active="active">
-						{{ ::'news.list.all_tab' | translate }}
+						{{ ::'main.news.list.all_tab' | translate }}
 					</a>
 				</li>
 				<li ng-if="App.user">
 					<a ui-sref="^.news.list-section( { section: 'followed', sort: undefined } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.followed_tooltip' )"
+						gj-tooltip="$translate.instant( 'main.news.list.followed_tooltip' )"
 						tooltip-placement="bottom"
 						>
-						{{ ::'news.list.followed_tab' | translate }}
+						{{ ::'main.news.list.followed_tab' | translate }}
 					</a>
 				</li>
 				<li>
 					<a ui-sref="^.news.list-section( { section: 'in-development' } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.wip_tooltip' )"
+						gj-tooltip="$translate.instant( 'main.news.list.wip_tooltip' )"
 						tooltip-placement="bottom"
 						>
-						{{ ::'news.list.wip_tab' | translate }}
+						{{ ::'main.news.list.wip_tab' | translate }}
 					</a>
 				</li>
 				<li>
 					<a ui-sref="^.news.list-section( { section: 'released' } )" ui-sref-active="active"
-						gj-tooltip="$translate.instant( 'news.list.released_tooltip' )"
+						gj-tooltip="$translate.instant( 'main.news.list.released_tooltip' )"
 						tooltip-placement="bottom"
 						>
-						{{ ::'news.list.released_tab' | translate }}
+						{{ ::'main.news.list.released_tab' | translate }}
 					</a>
 				</li>
 			</ul>
@@ -68,7 +68,7 @@
 
 			<div class="col-md-8" id="articles-list">
 
-				<div class="alert alert-info full-bleed-xs" ng-if="newsCtrl.section == 'followed'" translate>news.list.followed_help_html</div>
+				<div class="alert alert-info full-bleed-xs" ng-if="newsCtrl.section == 'followed'" translate>main.news.list.followed_help_html</div>
 
 				<div class="clearfix">
 					<div class="pull-left">
@@ -78,12 +78,12 @@
 								Only show page if needed.
 							-->
 							<span ng-if="newsCtrl.newsArticlesCount > newsCtrl.perPage">
-								{{ 'news.list.page' | translate:{ page: newsCtrl.currentPage } }}
+								{{ 'main.news.list.page' | translate:{ page: newsCtrl.currentPage } }}
 							</span>
 
-							<span ng-if="newsCtrl.newsArticlesCount == 0">{{ ::'news.list.posts_count_none' | translate }}</span>
-							<span ng-if="newsCtrl.newsArticlesCount == 1">{{ ::'news.list.posts_count_one' | translate }}</span>
-							<span ng-if="newsCtrl.newsArticlesCount > 1">{{ 'news.list.posts_count_other' | translate:{ count: newsCtrl.newsArticlesCount } }}</span>
+							<span ng-if="newsCtrl.newsArticlesCount == 0">{{ ::'main.news.list.posts_count_none' | translate }}</span>
+							<span ng-if="newsCtrl.newsArticlesCount == 1">{{ ::'main.news.list.posts_count_one' | translate }}</span>
+							<span ng-if="newsCtrl.newsArticlesCount > 1">{{ 'main.news.list.posts_count_other' | translate:{ count: newsCtrl.newsArticlesCount } }}</span>
 						</div>
 					</div>
 
@@ -106,8 +106,8 @@
 
 				<div ng-if="!newsCtrl.articles.length">
 					<div class="alert alert-warning">
-						<p ng-if="newsCtrl.section != 'followed'" translate>news.list.no_posts_html</p>
-						<p ng-if="newsCtrl.section == 'followed'" translate>news.list.no_posts_followed_html</p>
+						<p ng-if="newsCtrl.section != 'followed'" translate>main.news.list.no_posts_html</p>
+						<p ng-if="newsCtrl.section == 'followed'" translate>main.news.list.no_posts_followed_html</p>
 					</div>
 				</div>
 

@@ -10,7 +10,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 
 	this.removeScore = function( score )
 	{
-		ModalConfirm.show( $translate.instant( 'dash.games.scores.view.remove_confirmation' ) )
+		ModalConfirm.show( gettextCatalog.getString( 'dash.games.scores.view.remove_confirmation' ) )
 			.then( function()
 			{
 				return _this.score.$remove();

@@ -33,10 +33,10 @@
 				<nav class="platform-list inline" ng-if="App.user">
 					<ul>
 						<li>
-							<a ui-sref="^.list( { type: 'best' } )" ui-sref-active="active" gj-no-auto-scroll>{{ ::'game.scores.best_tab' | translate }}</a>
+							<a ui-sref="^.list( { type: 'best' } )" ui-sref-active="active" gj-no-auto-scroll>{{ ::'main.game.scores.best_tab' | translate }}</a>
 						</li>
 						<li>
-							<a ui-sref="^.list( { type: 'user' } )" ui-sref-active="active" gj-no-auto-scroll>{{ ::'game.scores.user_tab' | translate }}</a>
+							<a ui-sref="^.list( { type: 'user' } )" ui-sref-active="active" gj-no-auto-scroll>{{ ::'main.game.scores.user_tab' | translate }}</a>
 						</li>
 					</ul>
 				</nav>
@@ -70,8 +70,8 @@
 
 				<div ng-if="!listCtrl.scores.length">
 					<div ng-switch="listCtrl.type" class="alert alert-warning full-bleed-xs">
-						<div ng-switch-when="best" translate>game.scores.no_scores_html</div>
-						<div ng-switch-when="user" translate>game.scores.no_user_scores_html</div>
+						<div ng-switch-when="best" translate>main.game.scores.no_scores_html</div>
+						<div ng-switch-when="user" translate>main.game.scores.no_user_scores_html</div>
 					</div>
 				</div>
 

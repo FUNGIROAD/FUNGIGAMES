@@ -9,7 +9,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	this.onEdited = function()
 	{
-		Translate.growl( 'success', 'dash.games.releases.edit.saved' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.games.releases.edit.saved_growl' ),
+			gettextCatalog.getString( 'dash.games.releases.edit.saved_growl_title' ),
+		);
 		$state.go( '^.builds' );
 	};
 } );

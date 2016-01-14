@@ -27,10 +27,16 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.scores.user.list.remove', {
-					user: _this.user.display_name,
-					table: _this.scoreTable.name,
-				} );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.scores.user.list.remove_growl', {
+						user: _this.user.display_name,
+						table: _this.scoreTable.name,
+					} ),
+					gettextCatalog.getString( 'dash.games.scores.user.list.remove_growl_title', {
+						user: _this.user.display_name,
+						table: _this.scoreTable.name,
+					} ),
+				);
 
 				$state.go( 'dashboard.developer.games.manage.api.scoreboards.scores.list', { table: _this.scoreTable.id } );
 			} );

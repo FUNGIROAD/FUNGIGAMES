@@ -4,7 +4,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 
 	this.onSaved = function()
 	{
-		Translate.growl( 'success', 'dash.games.thumbnail.saved' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.games.thumbnail.saved_growl' ),
+			gettextCatalog.getString( 'dash.games.thumbnail.saved_growl_title' ),
+		);
 		Scroll.to( 0 );
 	};
 } );

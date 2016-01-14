@@ -173,7 +173,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 				--releaseCtrl.release.build_count;
 				_.remove( releaseCtrl.builds, { id: build.id } );
 
-				Translate.growl( 'success', 'dash.games.releases.builds.remove_build' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.releases.builds.remove_build_growl' ),
+					gettextCatalog.getString( 'dash.games.releases.builds.remove_build_growl_title' ),
+				);
 			} );
 	}
 

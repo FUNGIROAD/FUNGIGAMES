@@ -36,12 +36,18 @@ angular.module( 'App.Views' ).controller( 'Library.Collection.ListingCtrl', func
 			{
 				playlist.$removeGame( game.id ).then( function()
 				{
-					Translate.growl( 'success', 'library.playlists.remove_game_success', { game: game.title, playlist: playlist.name } );
+					Growls.success(
+						gettextCatalog.getString( 'library.playlists.remove_game_success_growl', { game: game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_game_success_growl_title', { game: game.title, playlist: playlist.name } ),
+					);
 					_this._removeGame( game );
 				} )
 				.catch( function()
 				{
-					Translate.growl( 'error', 'library.playlists.remove_game_error', { game: game.title, playlist: playlist.name } );
+					Growls.error(
+						gettextCatalog.getString( 'library.playlists.remove_game_error_growl', { game: game.title, playlist: playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_game_error_growl_title', { game: game.title, playlist: playlist.name } ),
+					);
 				} );
 			} );
 	};
@@ -56,12 +62,18 @@ angular.module( 'App.Views' ).controller( 'Library.Collection.ListingCtrl', func
 			{
 				libraryGame.$remove().then( function()
 				{
-					Translate.growl( 'success', 'library.followed.remove_game_success', { game: game.title } );
+					Growls.success(
+						gettextCatalog.getString( 'library.followed.remove_game_success_growl', { game: game.title } ),
+						gettextCatalog.getString( 'library.followed.remove_game_success_growl_title', { game: game.title } ),
+					);
 					_this._removeGame( game );
 				} )
 				.catch( function()
 				{
-					Translate.growl( 'error', 'library.followed.remove_game_error', { game: game.title } );
+					Growls.error(
+						gettextCatalog.getString( 'library.followed.remove_game_error_growl', { game: game.title } ),
+						gettextCatalog.getString( 'library.followed.remove_game_error_growl_title', { game: game.title } ),
+					);
 				} );
 			} );
 	};

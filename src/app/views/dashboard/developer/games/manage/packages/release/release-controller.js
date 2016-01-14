@@ -32,7 +32,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.releases.manage.publish_release' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.releases.manage.publish_release_growl' ),
+					gettextCatalog.getString( 'dash.games.releases.manage.publish_release_growl_title' ),
+				);
 			} );
 	}
 
@@ -45,7 +48,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.releases.manage.unpublish_release' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.releases.manage.unpublish_release_growl' ),
+					gettextCatalog.getString( 'dash.games.releases.manage.unpublish_release_growl_title' ),
+				);
 			} );
 	}
 
@@ -58,7 +64,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.releases.manage.remove_release' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.releases.manage.remove_release_growl' ),
+					gettextCatalog.getString( 'dash.games.releases.manage.remove_release_growl_title' ),
+				);
 				$state.go( 'dashboard.developer.games.manage.packages.package.releases', { packageId: _this.package.id } );
 			} );
 	}

@@ -7,7 +7,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 	this.onEdited = function()
 	{
-		Translate.growl( 'success', 'dash.games.packages.edit.saved' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.games.packages.edit.saved_growl' ),
+			gettextCatalog.getString( 'dash.games.packages.edit.saved_growl_title' ),
+		);
 		$state.go( '^.releases' );
 	};
 } );

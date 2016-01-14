@@ -4,7 +4,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News
 
 	this.onSubmitted = function()
 	{
-		Translate.growl( 'success', 'dash.games.news.add.added' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.games.news.add.added_growl' ),
+			gettextCatalog.getString( 'dash.games.news.add.added_growl_title' ),
+		);
 		$state.go( '^.list' );
 	};
 } );

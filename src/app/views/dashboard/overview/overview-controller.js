@@ -32,4 +32,14 @@ angular.module( 'App.Views' ).controller( 'Dashboard.OverviewCtrl', function( $s
 			this.isFullyIntegrated = false;
 		}
 	}, this );
+
+	this.integrationTranslations = {
+		'played_game': gettextCatalog.getString( 'dash.integrate.played_game_html' ),
+		'rated_game': gettextCatalog.getString( 'dash.integrate.rated_game_html' ),
+		'got_trophy': gettextCatalog.getString( 'dash.integrate.got_trophy_html' ),
+		'got_score': gettextCatalog.getString( 'dash.integrate.got_score_html' ),
+		'has_friend': gettextCatalog.getString( 'dash.integrate.has_friend_html' ),
+		'has_facebook': gettextCatalog.getString( 'dash.integrate.has_facebook_html' ),
+		'has_twitter': gettextCatalog.getString( 'dash.integrate.has_twitter_html' ),
+	};
 } );

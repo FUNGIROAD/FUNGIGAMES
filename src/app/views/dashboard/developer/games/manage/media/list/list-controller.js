@@ -39,9 +39,16 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 
 	function removeItem( item )
 	{
-		var message = gettextCatalog.getString( 'dash.games.media.remove_confirmation', {
-			type: gettextCatalog.getString( 'dash.games.media.' + item.media_type + '_label' ).toLowerCase(),
-		} );
+		var typeLabel;
+		if ( item.media_type == 'image' ) {
+			typeLabel = gettextCatalog.getString( 'dash.games.media.image_label' ).toLowerCase();
+		}
+		else if ( item.media_type == 'video' ) {
+			typeLabel = gettextCatalog.getString( 'dash.games.media.video_label' ).toLowerCase();
+		}
+
+		/// {{ type }} contains the translated media item type (image/video)
+		var message = gettextCatalog.getString( 'dash.games.media.remove_confirmation', { type: typeLabel } );
 
 		ModalConfirm.show( message ).then( function()
 		{

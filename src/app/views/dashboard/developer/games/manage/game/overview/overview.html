@@ -56,11 +56,17 @@
 
 			<!-- Game isn't ready to publish yet. -->
 			<div class="alert alert-warning" ng-if="!overviewCtrl.isPublishable">
-				<p translate translate-scope="{
+				<p ng-if="manageCtrl.game.development_status == Game.DEVELOPMENT_STATUS_WIP" translate translate-scope="{
 					thumbnailUrl: $state.href( '^.thumbnail' ),
 					maturityUrl: $state.href( '^.maturity' ),
 					buildsUrl: $state.href( '^.^.packages' ),
-				}">dash.games.overview.{{ manageCtrl.game.development_status == Game.DEVELOPMENT_STATUS_WIP ? 'todo_info_wip_html' : 'todo_info_html' }}</p>
+				}">dash.games.overview.todo_info_wip_html</p>
+
+				<p ng-if="manageCtrl.game.development_status != Game.DEVELOPMENT_STATUS_WIP" translate translate-scope="{
+					thumbnailUrl: $state.href( '^.thumbnail' ),
+					maturityUrl: $state.href( '^.maturity' ),
+					buildsUrl: $state.href( '^.^.packages' ),
+				}">dash.games.overview.todo_info_html</p>
 			</div>
 
 			<!-- Ready to publish! -->

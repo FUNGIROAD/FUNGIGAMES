@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', function(
-	$scope, $state, $stateParams, $timeout, $interval, App, Meta, Translate, Game, SplitTest, dateFilter, gettextCatalog, payload )
+	$scope, $state, $stateParams, $timeout, $interval, App, Meta, Game, SplitTest, dateFilter, gettextCatalog, payload )
 {
 	var _this = this;
 

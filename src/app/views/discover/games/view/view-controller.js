@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Discover.Games.ViewCtrl', function(
-	$scope, Location, Api, SplitTest, Game, Game_ViewState, GameLibrary_Game, Game_Rating, Game_ScoreTable, Growls, Translate, Analytics, gettextCatalog, game, gamePayload )
+	$scope, Location, Api, SplitTest, Game, Game_ViewState, GameLibrary_Game, Game_Rating, Game_ScoreTable, Growls, Analytics, gettextCatalog, game, gamePayload )
 {
 	var _this = this;
 

@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
-	$scope, $state, Location, Translate, App, Meta, AutoScroll, ModalConfirm, Growls, GamePlaylist_SaveModal,
+	$scope, $state, Location, App, Meta, AutoScroll, ModalConfirm, Growls, GamePlaylist_SaveModal,
 	GameCollection, GamePlaylist, GameBundle, User,
 	gettextCatalog, filteringContainer )
 {

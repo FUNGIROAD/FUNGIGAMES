@@ -8,7 +8,7 @@ angular.module( 'App.Game.MediaBar' ).directive( 'gjGameMediaBar', function()
 		templateUrl: '/app/components/game/media-bar/media-bar.html',
 		bindToController: true,
 		controllerAs: 'ctrl',
-		controller: function( $scope, $location, $timeout, Screen, Translate, Analytics )
+		controller: function( $scope, $location, $timeout, Screen, Growls, Analytics, gettextCatalog )
 		{
 			var _this = this;
 
@@ -76,7 +76,12 @@ angular.module( 'App.Game.MediaBar' ).directive( 'gjGameMediaBar', function()
 						Analytics.trackEvent( 'media-bar', 'permalink' );
 					}
 					else {
-						Translate.growl( 'error', 'games.view.media.invalid_' + type );
+						if ( type == 'image' ) {
+							Growls.error( gettextCatalog.getString( 'games.view.media.invalid_image' ) );
+						}
+						else if ( type == 'video' ) {
+							Growls.error( gettextCatalog.getString( 'games.view.media.invalid_video' ) );
+						}
 						Analytics.trackEvent( 'media-bar', 'permalink-invalid' );
 					}
 				}

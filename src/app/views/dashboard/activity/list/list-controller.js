@@ -18,7 +18,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Activity.ListCtrl', functio
 	this.notificationTypes = [
 		{
 			key: undefined,
-			label: gettextCatalog.getString( 'all_label' ),
+			label: gettextCatalog.getString( 'notifications.all_label' ),
 		},
 		{
 			key: Notification.TYPE_GAME_NEWS_ADD,

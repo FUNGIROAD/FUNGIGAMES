@@ -1,7 +1,5 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Media.AddCtrl', function( $scope, $state, App )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Media.AddCtrl', function( $scope, $state )
 {
-	App.title = gettextCatalog.getString( 'dash.games.media.add.page_title', { game: $scope.manageCtrl.game.title } );
-
 	this.onImageSubmit = function( formModel )
 	{
 		$state.go( '^.list' );

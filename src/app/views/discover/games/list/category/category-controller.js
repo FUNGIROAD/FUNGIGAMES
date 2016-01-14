@@ -1,7 +1,30 @@
 angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', function(
-	$scope, $state, $stateParams, $timeout, $interval, App, Meta, Game, SplitTest, dateFilter, gettextCatalog, payload )
+	$scope, $state, $stateParams, $timeout, $interval, App, Meta, Game, SplitTest, dateFilter, gettext, gettextCatalog, payload )
 {
 	var _this = this;
+
+	// Just pull in the translation labels we need.
+	gettext( 'discover.categories.all' );
+	gettext( 'discover.categories.arcade' );
+	gettext( 'discover.categories.action' );
+	gettext( 'discover.categories.adventure' );
+	gettext( 'discover.categories.platformer' );
+	gettext( 'discover.categories.puzzle' );
+	gettext( 'discover.categories.rpg' );
+	gettext( 'discover.categories.shooter' );
+	gettext( 'discover.categories.sports' );
+	gettext( 'discover.categories.strategy_sim' );
+	gettext( 'discover.categories.other' );
+
+	gettext( 'games.list.page_title' );
+	gettext( 'games.list.page_title_rpg' );
+	gettext( 'games.list.page_title_other' );
+
+	gettext( 'games.list.section_featured' );
+	gettext( 'games.list.section_new' );
+	gettext( 'games.list.section_fresh' );
+	gettext( 'games.list.section_hot' );
+	gettext( 'games.list.section_best' );
 
 	var listCtrl = $scope.listCtrl;
 	var section = $stateParams.section;
@@ -38,17 +61,23 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', fu
 
 	if ( section == 'by-date' ) {
 		if ( !listCtrl.dateRange ) {
+			/// Single date view of games
+			/// {{ date }} is available as the localized date
 			App.title = gettextCatalog.getString( 'games.list.date_page_title', { date: listCtrl.date } );
 		}
 		else {
+			/// When viewing a date range view of games (games published between two dates)
+			/// {{ dateStart }} and {{ dateEnd }} are available as localized dates
 			App.title = gettextCatalog.getString( 'games.list.date_range_page_title', { dateStart: listCtrl.dateRange[0], dateEnd: listCtrl.dateRange[1] } );
 		}
 	}
 	else {
-		var sectionHuman = gettextCatalog.getString( 'games.list.section_' + section );
+		var sectionTranslationKey = 'games.list.section_' + section;
+		var sectionHuman = gettextCatalog.getString( sectionTranslationKey );
 		var categoryHuman = ' ';
 		if ( category ) {
-			categoryHuman = gettextCatalog.getString( 'discover.categories.' + category.replace( '-', '_' ) );
+			var categoryTranslationKey = 'discover.categories.' + category.replace( '-', '_' );
+			categoryHuman = gettextCatalog.getString( categoryTranslationKey );
 			categoryHuman = (' ' + categoryHuman + ' ');
 		}
 
@@ -64,13 +93,16 @@ angular.module( 'App.Views' ).controller( 'Discover.Games.List.CategoryCtrl', fu
 		Meta.description = payload.metaDescription;
 
 		if ( category == 'rpg' ) {
+			/// {{ category }} is available as the translated category label
 			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category_rpg', { category: categoryHuman } );
 		}
 		else if ( category == 'other' ) {
+			/// {{ category }} is available as the translated category label
 			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category_other', { category: categoryHuman } );
 		}
 		else {
-			// In the case of no category, categoryHuman will be ''.
+			/// {{ category }} is available as the translated category label
+			/// In the case of no category, {{ category }} will be empty ''
 			listCtrl.descriptiveCategory = gettextCatalog.getString( 'games.list.descriptive_category', { category: categoryHuman } );
 		}
 	}

@@ -60,13 +60,14 @@ angular.module( 'App.Game.MediaBar' ).directive( 'gjGameMediaBar', function()
 			var id;
 			var hash = $location.hash();
 			if ( hash ) {
+				var type;
 				if ( hash.indexOf( 'screenshot-' ) !== -1 ) {
 					id = parseInt( hash.substring( 'screenshot-'.length ) );
-					var type = 'image';
+					type = 'image';
 				}
 				else if ( hash.indexOf( 'video-' ) !== -1 ) {
 					id = parseInt( hash.substring( 'video-'.length ) );
-					var type = 'video';
+					type = 'video';
 				}
 
 				if ( id ) {
@@ -77,10 +78,16 @@ angular.module( 'App.Game.MediaBar' ).directive( 'gjGameMediaBar', function()
 					}
 					else {
 						if ( type == 'image' ) {
-							Growls.error( gettextCatalog.getString( 'games.view.media.invalid_image' ) );
+							Growls.error(
+								gettextCatalog.getString( 'games.view.media.invalid_image_growl' ),
+								gettextCatalog.getString( 'games.view.media.invalid_image_growl_title' )
+							);
 						}
 						else if ( type == 'video' ) {
-							Growls.error( gettextCatalog.getString( 'games.view.media.invalid_video' ) );
+							Growls.error(
+								gettextCatalog.getString( 'games.view.media.invalid_video_growl' ),
+								gettextCatalog.getString( 'games.view.media.invalid_video_growl_title' )
+							);
 						}
 						Analytics.trackEvent( 'media-bar', 'permalink-invalid' );
 					}

@@ -11,7 +11,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 	{
 		Growls.success(
 			gettextCatalog.getString( 'dash.games.releases.edit.saved_growl' ),
-			gettextCatalog.getString( 'dash.games.releases.edit.saved_growl_title' ),
+			gettextCatalog.getString( 'dash.games.releases.edit.saved_growl_title' )
 		);
 		$state.go( '^.builds' );
 	};

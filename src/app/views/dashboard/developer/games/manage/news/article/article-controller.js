@@ -1,4 +1,4 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.ArticleCtrl', function( $state, ModalConfirm, gettextCatalog )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News.ArticleCtrl', function( $state, ModalConfirm, Growls, gettextCatalog )
 {
 	var _this = this;
 
@@ -19,7 +19,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News
 			{
 				Growls.success(
 					gettextCatalog.getString( 'dash.games.news.article.remove_growl' ),
-					gettextCatalog.getString( 'dash.games.news.article.remove_growl_title' ),
+					gettextCatalog.getString( 'dash.games.news.article.remove_growl_title' )
 				);
 				$state.go( 'dashboard.developer.games.manage.news.list' );
 			} );

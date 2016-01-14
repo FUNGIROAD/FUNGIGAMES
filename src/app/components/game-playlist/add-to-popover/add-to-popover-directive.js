@@ -8,7 +8,7 @@ angular.module( 'App.GamePlaylist.AddToPopover' ).directive( 'gjGamePlaylistAddT
 		},
 		controllerAs: 'ctrl',
 		bindToController: true,
-		controller: function( $scope, Translate, GamePlaylist, Growls, GamePlaylist_SaveModal, Popover, Screen, Analytics, gettextCatalog )
+		controller: function( $scope, GamePlaylist, Growls, GamePlaylist_SaveModal, Popover, Screen, Analytics, gettextCatalog )
 		{
 			var _this = this;
 

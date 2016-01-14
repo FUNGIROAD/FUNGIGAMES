@@ -7,13 +7,13 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 		if ( response.wasPublished ) {
 			Growls.success(
 				gettextCatalog.getString( 'dash.games.overview.published_growl' ),
-				gettextCatalog.getString( 'dash.games.overview.published_growl_title' ),
+				gettextCatalog.getString( 'dash.games.overview.published_growl_title' )
 			);
 		}
 		else {
 			Growls.success(
 				gettextCatalog.getString( 'dash.games.edit.save_growl' ),
-				gettextCatalog.getString( 'dash.games.edit.save_growl_title' ),
+				gettextCatalog.getString( 'dash.games.edit.save_growl_title' )
 			);
 		}
 

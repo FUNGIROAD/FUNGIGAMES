@@ -4,10 +4,11 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.AddCtrl', f
 
 	this.onSubmit = function( formModel )
 	{
-		Growls.success(
-			gettextCatalog.getString( 'dash.games.add.add_growl', { _sticky: true } ),
-			gettextCatalog.getString( 'dash.games.add.add_growl_title', { _sticky: true } ),
-		);
+		Growls.success( {
+			message: gettextCatalog.getString( 'dash.games.add.add_growl' ),
+			title: gettextCatalog.getString( 'dash.games.add.add_growl_title' ),
+			sticky: true,
+		} );
 
 		$state.go( 'dashboard.developer.games.manage.game.overview', { id: formModel.id } );
 	};

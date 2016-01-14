@@ -25,7 +25,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 				_.remove( $scope.packagesCtrl.packages, { id: _this.package.id } );
 				Growls.success(
 					gettextCatalog.getString( 'dash.games.packages.manage.removed_growl' ),
-					gettextCatalog.getString( 'dash.games.packages.manage.removed_growl_title' ),
+					gettextCatalog.getString( 'dash.games.packages.manage.removed_growl_title' )
 				);
 				$state.go( 'dashboard.developer.games.manage.packages' );
 			} );

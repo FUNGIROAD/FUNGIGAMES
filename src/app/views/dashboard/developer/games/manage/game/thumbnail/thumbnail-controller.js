@@ -1,4 +1,4 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.ThumbnailCtrl', function( $scope, App, Scroll, gettextCatalog )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.ThumbnailCtrl', function( $scope, App, Scroll, Growls, gettextCatalog )
 {
 	App.title = gettextCatalog.getString( 'dash.games.thumbnail.page_title', { game: $scope.manageCtrl.game.title } );
 
@@ -6,7 +6,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 	{
 		Growls.success(
 			gettextCatalog.getString( 'dash.games.thumbnail.saved_growl' ),
-			gettextCatalog.getString( 'dash.games.thumbnail.saved_growl_title' ),
+			gettextCatalog.getString( 'dash.games.thumbnail.saved_growl_title' )
 		);
 		Scroll.to( 0 );
 	};

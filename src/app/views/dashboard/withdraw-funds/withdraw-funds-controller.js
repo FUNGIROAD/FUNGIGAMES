@@ -15,7 +15,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.WithdrawFundsCtrl', functio
 	{
 		Growls.success(
 			gettextCatalog.getString( 'dash.funds.withdraw.success_growl' ),
-			gettextCatalog.getString( 'dash.funds.withdraw.success_growl_title' ),
+			gettextCatalog.getString( 'dash.funds.withdraw.success_growl_title' )
 		);
 		$state.go( '^.overview' );
 	};

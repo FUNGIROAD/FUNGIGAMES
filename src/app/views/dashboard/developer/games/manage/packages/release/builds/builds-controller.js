@@ -175,7 +175,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Pack
 
 				Growls.success(
 					gettextCatalog.getString( 'dash.games.releases.builds.remove_build_growl' ),
-					gettextCatalog.getString( 'dash.games.releases.builds.remove_build_growl_title' ),
+					gettextCatalog.getString( 'dash.games.releases.builds.remove_build_growl_title' )
 				);
 			} );
 	}

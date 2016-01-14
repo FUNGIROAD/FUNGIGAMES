@@ -1,4 +1,4 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.HeaderCtrl', function( $scope, App, Popover, Scroll, gettextCatalog )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.HeaderCtrl', function( $scope, App, Popover, Scroll, Growls, gettextCatalog )
 {
 	App.title = gettextCatalog.getString( 'dash.games.header.page_title', { game: $scope.manageCtrl.game.title } );
 
@@ -18,7 +18,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 	{
 		Growls.success(
 			gettextCatalog.getString( 'dash.games.header.saved_growl' ),
-			gettextCatalog.getString( 'dash.games.header.saved_growl_title' ),
+			gettextCatalog.getString( 'dash.games.header.saved_growl_title' )
 		);
 		Scroll.to( 0 );
 	};

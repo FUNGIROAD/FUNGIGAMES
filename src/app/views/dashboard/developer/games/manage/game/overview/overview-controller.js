@@ -1,4 +1,4 @@
-angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.OverviewCtrl', function( $scope, $state, App, ModalConfirm, Notification, Game, gettextCatalog, payload )
+angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game.OverviewCtrl', function( $scope, $state, App, ModalConfirm, Notification, Game, Growls, gettextCatalog, payload )
 {
 	var manageCtrl = $scope.manageCtrl;
 	var game = manageCtrl.game;
@@ -110,7 +110,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 			{
 				Growls.success(
 					gettextCatalog.getString( 'dash.games.overview.published_growl' ),
-					gettextCatalog.getString( 'dash.games.overview.published_growl_title' ),
+					gettextCatalog.getString( 'dash.games.overview.published_growl_title' )
 				);
 			} );
 	};

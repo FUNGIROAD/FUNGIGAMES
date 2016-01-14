@@ -1,5 +1,5 @@
 angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.Scoreboards.Scores.User.ListCtrl', function(
-	$scope, $state, App, User, Game_ScoreTable, User_GameScore, ModalConfirm, gettextCatalog, payload )
+	$scope, $state, App, User, Game_ScoreTable, User_GameScore, ModalConfirm, Growls, gettextCatalog, payload )
 {
 	var _this = this;
 
@@ -35,7 +35,7 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Api.
 					gettextCatalog.getString( 'dash.games.scores.user.list.remove_growl_title', {
 						user: _this.user.display_name,
 						table: _this.scoreTable.name,
-					} ),
+					} )
 				);
 
 				$state.go( 'dashboard.developer.games.manage.api.scoreboards.scores.list', { table: _this.scoreTable.id } );

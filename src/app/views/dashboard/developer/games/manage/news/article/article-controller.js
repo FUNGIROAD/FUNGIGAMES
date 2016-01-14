@@ -17,7 +17,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.News
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.news.article.remove' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.news.article.remove_growl' ),
+					gettextCatalog.getString( 'dash.games.news.article.remove_growl_title' ),
+				);
 				$state.go( 'dashboard.developer.games.manage.news.list' );
 			} );
 	};

@@ -13,7 +13,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.WithdrawFundsCtrl', functio
 
 	this.onSubmit = function( response )
 	{
-		Translate.growl( 'success', 'dash.funds.withdraw.success' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.funds.withdraw.success_growl' ),
+			gettextCatalog.getString( 'dash.funds.withdraw.success_growl_title' ),
+		);
 		$state.go( '^.overview' );
 	};
 } );

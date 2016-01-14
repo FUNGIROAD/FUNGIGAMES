@@ -16,7 +16,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 
 	this.onSaved = function()
 	{
-		Translate.growl( 'success', 'dash.games.header.saved' );
+		Growls.success(
+			gettextCatalog.getString( 'dash.games.header.saved_growl' ),
+			gettextCatalog.getString( 'dash.games.header.saved_growl_title' ),
+		);
 		Scroll.to( 0 );
 	};
 } );

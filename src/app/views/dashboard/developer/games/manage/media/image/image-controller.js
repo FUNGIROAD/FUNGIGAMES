@@ -14,7 +14,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Medi
 		} )
 		.then( function()
 		{
-			Translate.growl( 'success', 'dash.games.media.image.removed' );
+			Growls.success(
+				gettextCatalog.getString( 'dash.games.media.image.removed_growl' ),
+				gettextCatalog.getString( 'dash.games.media.image.removed_growl_title' ),
+			);
 			$state.go( '^.list' );
 		} );
 	};

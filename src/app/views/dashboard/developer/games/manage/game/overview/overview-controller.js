@@ -108,7 +108,10 @@ angular.module( 'App.Views' ).controller( 'Dashboard.Developer.Games.Manage.Game
 			} )
 			.then( function()
 			{
-				Translate.growl( 'success', 'dash.games.overview.published' );
+				Growls.success(
+					gettextCatalog.getString( 'dash.games.overview.published_growl' ),
+					gettextCatalog.getString( 'dash.games.overview.published_growl_title' ),
+				);
 			} );
 	};
 

@@ -208,11 +208,17 @@ angular.module( 'App.Views' ).controller( 'Library.CollectionCtrl', function(
 				{
 					_.remove( $scope.libraryCtrl.collections, { type: _this.collection.type, id: _this.collection.id } );
 					$state.go( 'library.overview' );
-					Translate.growl( 'success', 'library.playlists.remove_playlist_success', { playlist: _this.playlist.name } );
+					Growls.success(
+						gettextCatalog.getString( 'library.playlists.remove_playlist_success_growl', { playlist: _this.playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_playlist_success_growl_title', { playlist: _this.playlist.name } ),
+					);
 				} )
 				.catch( function()
 				{
-					Translate.growl( 'success', 'library.playlists.remove_playlist_error', { playlist: _this.playlist.name } );
+					Growls.success(
+						gettextCatalog.getString( 'library.playlists.remove_playlist_error_growl', { playlist: _this.playlist.name } ),
+						gettextCatalog.getString( 'library.playlists.remove_playlist_error_growl_title', { playlist: _this.playlist.name } ),
+					);
 				} );
 			} );
 	};

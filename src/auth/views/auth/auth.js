@@ -9,7 +9,10 @@ angular.module( 'App.Views', [] ).config( function( $stateProvider )
 		resolve: {
 			init: function( Translate )
 			{
-				return Translate.loadSection( 'main' );
+				return Translate.setLanguage( 'de' ).then( function()
+				{
+					return Translate.loadSection( 'main' );
+				} );
 			},
 			authPayload: function( Api )
 			{

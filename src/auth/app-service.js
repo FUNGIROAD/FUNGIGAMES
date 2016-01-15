@@ -24,7 +24,6 @@ angular.module( 'App' ).service( 'App', function( $window, Environment, Translat
 
 	this.onLangChange = function()
 	{
-		console.log( _this.lang );
 		Translate.setLanguage( _this.lang );
 	};
 } );

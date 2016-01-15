@@ -92,11 +92,19 @@ angular.module( 'App', [
 		$compileProvider.imgSrcSanitizationWhitelist( /^\s*((https?|ftp|file|blob|app):|data:image\/)/ );
 	}
 
+	// Can't include in a foreach. Have to list out so that the revisioner for filenames will pull it.
 	var languages = {
 		main: {
-			en: '/translations/en/main.json',
-			nl: '/translations/nl/main.json',
-			ro: '/translations/ro/main.json',
+			'en': '/translations/en/main.json',
+			'en-us': '/translations/en/main.json',
+			'nl': '/translations/nl/main.json',
+			'ro': '/translations/ro/main.json',
+			'de': '/translations/de/main.json',
+			'es': '/translations/es/main.json',
+			'fr': '/translations/fr/main.json',
+			'ru': '/translations/ru/main.json',
+			'sv': '/translations/sv/main.json',
+			'tr': '/translations/tr/main.json',
 		},
 	};
 
